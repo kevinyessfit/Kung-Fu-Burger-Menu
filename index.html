@@ -7,15 +7,16 @@
 <meta name="description" content="La formation complète pour lancer et rentabiliser ton business de cookies maison : recettes, chiffres, fournisseurs et stratégie de vente dans un seul guide de 18 pages.">
 <meta name="theme-color" content="#3A2318">
 <meta property="og:title" content="COOKIES BUSINESS">
-<meta property="og:description" content="Recettes, chiffres, fournisseurs et stratégie de vente réunis dans un seul guide.">
-<meta property="og:type" content="product">
+<meta property="og:description" content="Recettes, prix de revient, fournisseurs et plan de vente 7 jours — un seul guide de 18 pages.">
+<meta property="og:type" content="website">
 <meta property="og:image" content="cookies-business-cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
 <style>
-/* ============ TOKENS ============ */
 :root{
   --choco:#3A2318;
   --choco-soft:#5C3A26;
@@ -28,158 +29,44 @@
   --text:#2B1B12;
 
   --r-sm:8px;
-  --r-md:12px;
+  --r-md:11px;
   --r-lg:14px;
-  --shadow-sm:0 1px 2px rgba(58,35,24,.06), 0 2px 8px rgba(58,35,24,.05);
-  --shadow-md:0 2px 6px rgba(58,35,24,.07), 0 10px 24px rgba(58,35,24,.08);
-  --shadow-cta:0 4px 14px rgba(168,93,30,.28);
-  --pad:20px;
+  --shadow-sm:0 2px 8px rgba(58,35,24,.08);
+  --shadow-md:0 6px 18px rgba(58,35,24,.12);
   --maxw:640px;
+  --pad:20px;
 }
 
-/* ============ RESET ============ */
-*,*::before,*::after{box-sizing:border-box;}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
 body{
   margin:0;
   background:var(--cream);
   color:var(--text);
-  font-family:"Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  font-weight:400;
+  font-family:"Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   font-size:17px;
-  line-height:1.7;
+  line-height:1.65;
   overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
 }
-img,svg{max-width:100%;height:auto;display:block;}
-h1,h2,h3,h4{
-  font-family:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  color:var(--choco);
-  margin:0 0 .5em;
-  line-height:1.22;
-  letter-spacing:-.015em;
-}
-p{margin:0 0 1em;}
-p:last-child{margin-bottom:0;}
-ul{margin:0;padding:0;list-style:none;}
-a{color:inherit;}
-button{font:inherit;color:inherit;}
+img{max-width:100%;height:auto;display:block;}
+h1,h2,h3{font-family:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.22;margin:0 0 14px;color:var(--choco);overflow-wrap:break-word;}
+h1{font-size:clamp(30px,8.4vw,44px);font-weight:800;letter-spacing:-.5px;}
+h2{font-size:clamp(23px,6vw,30px);font-weight:700;}
+h3{font-size:19px;font-weight:700;}
+p{margin:0 0 16px;}
+strong{font-weight:700;color:var(--choco);}
 
-/* ============ LAYOUT ============ */
-.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);}
-section{padding:52px 0;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);}
+section{padding:46px 0;}
 .sec-cream{background:var(--cream);}
 .sec-paper{background:var(--paper);}
 .sec-deep{background:var(--cream-deep);}
+
 .eyebrow{
-  font-family:"Poppins",sans-serif;font-weight:700;font-size:12px;
-  letter-spacing:.16em;text-transform:uppercase;color:var(--caramel-dark);
-  margin:0 0 12px;
+  font-family:"Poppins",sans-serif;font-weight:700;font-size:13px;
+  letter-spacing:1.4px;text-transform:uppercase;color:var(--caramel-dark);
+  margin:0 0 10px;
 }
-h2{font-size:clamp(25px,6.4vw,34px);font-weight:800;}
-h3{font-size:19px;font-weight:700;}
-.lede{font-size:18px;color:var(--choco-soft);}
-
-/* décor : miettes */
-.crumbs{
-  height:34px;background:var(--cream);
-  -webkit-mask-image:radial-gradient(circle at 12px 0, transparent 11px, #000 12px);
-  mask-image:radial-gradient(circle at 12px 0, transparent 11px, #000 12px);
-  -webkit-mask-size:24px 34px;mask-size:24px 34px;
-  margin-top:-1px;
-}
-
-/* ============ CTA ============ */
-.cta{
-  display:block;width:100%;text-align:center;text-decoration:none;
-  background:linear-gradient(180deg,var(--caramel) 0%,var(--caramel-dark) 100%);
-  color:#fff;font-family:"Poppins",sans-serif;font-weight:700;
-  font-size:16px;line-height:1.35;
-  padding:17px 18px;border-radius:var(--r-lg);border:0;
-  box-shadow:var(--shadow-cta);
-  cursor:pointer;
-  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
-  position:relative;overflow:hidden;isolation:isolate;
-}
-/* reflet brillant en boucle */
-.cta::after{
-  content:"";position:absolute;top:-10%;left:-70%;width:42%;height:120%;
-  background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.48) 50%,transparent 100%);
-  transform:skewX(-20deg);pointer-events:none;
-  animation:shine 3.4s ease-in-out infinite;
-}
-@keyframes shine{
-  0%{left:-70%;}
-  55%,100%{left:135%;}
-}
-.cta:hover{filter:brightness(1.05);box-shadow:0 6px 18px rgba(168,93,30,.34);}
-.cta:active{transform:translateY(1px);}
-.cta:focus-visible{outline:3px solid var(--choco);outline-offset:3px;}
-.cta-note{
-  display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;
-  margin-top:12px;font-size:14px;color:var(--choco-soft);text-align:center;
-}
-.cta-note strong{color:var(--choco);font-weight:700;}
-.mm-list{flex-basis:100%;font-size:13.5px;opacity:.85;}
-.lock{width:14px;height:14px;flex:none;fill:none;stroke:var(--caramel-dark);stroke-width:2;}
-
-/* ============ HERO ============ */
-.hero{
-  background:
-    radial-gradient(90% 60% at 50% 0%, #4A2E1E 0%, var(--choco) 62%);
-  color:var(--cream);
-  padding:34px 0 44px;
-  position:relative;
-}
-.hero::after{
-  content:"";position:absolute;left:0;right:0;bottom:-1px;height:26px;
-  background:var(--cream);
-  -webkit-mask-image:radial-gradient(circle at 12px 26px, #000 12px, transparent 13px);
-  mask-image:radial-gradient(circle at 12px 26px, #000 12px, transparent 13px);
-  -webkit-mask-size:24px 26px;mask-size:24px 26px;
-}
-.badge{
-  display:inline-block;background:rgba(227,162,61,.16);
-  border:1px solid rgba(227,162,61,.42);color:var(--honey);
-  font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;
-  letter-spacing:.1em;text-transform:uppercase;
-  padding:7px 14px;border-radius:999px;margin-bottom:20px;
-}
-.hero h1{
-  color:var(--cream);
-  font-size:clamp(38px,11.5vw,62px);
-  font-weight:800;letter-spacing:-.03em;line-height:1.02;
-  margin:0 0 6px;
-}
-.hero h1 span{display:block;color:var(--honey);}
-.hero-sub{
-  font-size:17px;color:#E8D9C4;margin:0 0 26px;max-width:34em;
-}
-.cover{
-  width:100%;max-width:420px;margin:0 auto 22px;
-  border-radius:var(--r-lg);
-  box-shadow:0 10px 30px rgba(0,0,0,.34);
-}
-.price-block{
-  background:rgba(251,243,231,.07);
-  border:1px solid rgba(227,162,61,.3);
-  border-radius:var(--r-lg);
-  padding:18px 18px 20px;
-  margin-bottom:18px;
-}
-.price-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px;}
-.price-now{
-  font-family:"Poppins",sans-serif;font-weight:800;
-  font-size:clamp(32px,9vw,42px);color:var(--honey);line-height:1;
-}
-.price-old{
-  font-family:"Poppins",sans-serif;font-weight:600;font-size:19px;
-  color:#B49B82;text-decoration:line-through;text-decoration-thickness:2px;
-}
-.price-label{font-size:14px;color:#CBB79E;}
-.hero .cta-note{color:#CBB79E;}
-.hero .cta-note strong{color:var(--cream);}
-.hero .lock{stroke:var(--honey);}
 
 /* ============ PREUVE SOCIALE ============ */
 .topbar{background:var(--honey);padding:9px var(--pad);}
@@ -192,8 +79,7 @@ h3{font-size:19px;font-weight:700;}
 .stars{color:var(--choco);letter-spacing:1px;font-size:14px;}
 .revs{
   display:flex;gap:12px;margin-top:24px;
-  overflow-x:auto;scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch;
+  overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
   padding:2px 2px 14px;
   scrollbar-width:thin;scrollbar-color:var(--cream-deep) transparent;
 }
@@ -204,7 +90,12 @@ h3{font-size:19px;font-weight:700;}
   background:var(--paper);border:1px solid var(--cream-deep);
   border-radius:var(--r-lg);padding:16px 18px;box-shadow:var(--shadow-sm);
 }
+.rev .stars{color:var(--caramel);}
+.rev .who{font-family:"Poppins",sans-serif;font-weight:700;font-size:15px;color:var(--choco);margin:5px 0 8px;}
+.rev p{font-size:16px;color:var(--choco-soft);line-height:1.6;}
+.rev strong{color:var(--choco);font-weight:700;}
 .swipe-hint{font-size:13.5px;color:var(--choco-soft);margin:2px 0 0;}
+
 /* section avis en tête de page : compacte verticalement */
 section.tight{padding:22px 0 24px;}
 .tight .eyebrow{margin-bottom:6px;}
@@ -212,179 +103,210 @@ section.tight{padding:22px 0 24px;}
 .tight .revs{margin-top:14px;padding-bottom:10px;}
 .tight .rev{padding:14px 16px;}
 .tight .rev p{font-size:15.5px;line-height:1.5;}
-.rev .stars{color:var(--caramel);}
-.rev .who{
-  font-family:"Poppins",sans-serif;font-weight:700;font-size:15px;
-  color:var(--choco);margin:5px 0 8px;
+
+/* ============ HERO ============ */
+.hero{
+  background:linear-gradient(168deg,var(--choco) 0%,#4A2D1E 62%,var(--choco-soft) 100%);
+  color:var(--cream);
+  padding:38px 0 42px;
+  text-align:center;
 }
-.rev p{font-size:16px;color:var(--choco-soft);line-height:1.6;}
-.rev strong{color:var(--choco);font-weight:700;}
+.hero h1{color:var(--paper);margin-bottom:8px;}
+.hero .badge{
+  display:inline-block;background:rgba(227,162,61,.18);
+  border:1px solid rgba(227,162,61,.5);color:var(--honey);
+  font-family:"Poppins",sans-serif;font-weight:700;font-size:12.5px;
+  letter-spacing:1.2px;text-transform:uppercase;
+  padding:6px 14px;border-radius:999px;margin-bottom:18px;
+}
+.hero-sub{
+  color:#EFE0CC;font-size:17px;max-width:520px;margin:0 auto 22px;
+}
+.cover{
+  width:100%;max-width:420px;margin:0 auto 22px;
+  border-radius:var(--r-lg);box-shadow:0 10px 30px rgba(0,0,0,.34);
+}
+.price-block{
+  background:rgba(255,253,249,.07);
+  border:1px solid rgba(227,162,61,.34);
+  border-radius:var(--r-lg);
+  padding:18px 16px 20px;
+  margin:0 auto 20px;
+  max-width:420px;
+}
+.price-old{
+  font-family:"Poppins",sans-serif;font-weight:600;font-size:17px;
+  color:#C9B49C;text-decoration:line-through;text-decoration-thickness:2px;
+  display:block;margin-bottom:2px;
+}
+.price-now{
+  font-family:"Poppins",sans-serif;font-weight:800;
+  font-size:clamp(34px,10vw,46px);color:var(--honey);line-height:1.1;
+  display:block;
+}
+.price-note{font-size:14.5px;color:#DFCDB6;margin:8px 0 0;}
+
+/* ============ CTA ============ */
+.cta{
+  display:block;width:100%;max-width:440px;margin:0 auto;
+  background:linear-gradient(180deg,var(--caramel) 0%,var(--caramel-dark) 100%);
+  color:#FFF;text-decoration:none;text-align:center;
+  font-family:"Poppins",sans-serif;font-weight:700;font-size:17px;line-height:1.35;
+  padding:17px 18px;border-radius:var(--r-md);
+  box-shadow:0 5px 0 #8C4C16, var(--shadow-md);
+  border:none;cursor:pointer;
+  transition:transform .12s ease, box-shadow .12s ease;
+  position:relative;overflow:hidden;isolation:isolate;
+}
+.cta:active{transform:translateY(3px);box-shadow:0 2px 0 #8C4C16, var(--shadow-sm);}
+.cta:focus-visible{outline:3px solid var(--honey);outline-offset:3px;}
+/* reflet brillant en boucle */
+.cta::after{
+  content:"";position:absolute;top:-10%;left:-70%;width:42%;height:120%;
+  background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.48) 50%,transparent 100%);
+  transform:skewX(-20deg);pointer-events:none;
+  animation:shine 3.4s ease-in-out infinite;
+}
+@keyframes shine{
+  0%{left:-70%;}
+  55%,100%{left:135%;}
+}
+.pay{
+  font-size:14.5px;color:var(--choco-soft);text-align:center;
+  margin:12px auto 0;max-width:440px;
+}
+.hero .pay{color:#DFCDB6;}
 
 /* ============ MIROIR ============ */
-.mirror p{font-size:18px;color:var(--choco-soft);}
-.mirror .last{color:var(--text);font-weight:700;}
+.mirror p{color:var(--choco-soft);font-size:17.5px;}
 
 /* ============ BASCULE ============ */
 .pivot{
   background:var(--choco);
-  padding:56px 0 0;
+  padding:52px 0;
   text-align:center;
 }
-.pivot .wrap{padding-bottom:52px;}
 .pivot p{
-  font-family:"Poppins",sans-serif;font-weight:800;
-  font-size:clamp(26px,7.4vw,40px);
-  line-height:1.18;letter-spacing:-.02em;
-  color:var(--cream);margin:0;
+  font-family:"Poppins",sans-serif;font-weight:700;
+  font-size:clamp(24px,6.6vw,34px);line-height:1.3;
+  color:var(--paper);margin:0;
 }
-.pivot em{font-style:normal;color:var(--honey);display:block;margin-top:.35em;}
+.pivot .hl{color:var(--honey);}
 
-/* ============ TRANSFORMATION ============ */
-.tf{margin-top:26px;display:grid;gap:12px;}
-.tf li{
-  display:flex;gap:14px;align-items:flex-start;
-  background:var(--paper);border:1px solid var(--cream-deep);
-  border-radius:var(--r-md);padding:15px 16px;
+/* ============ LISTES ============ */
+.ticks{list-style:none;margin:0;padding:0;}
+.ticks li{
+  position:relative;padding:0 0 0 38px;margin-bottom:16px;
+  color:var(--choco-soft);
+}
+.ticks li::before{
+  content:"";position:absolute;left:0;top:2px;
+  width:25px;height:25px;border-radius:50%;
+  background:var(--honey);
+}
+.ticks li::after{
+  content:"";position:absolute;left:8.5px;top:9px;
+  width:7px;height:12px;
+  border:solid var(--choco);border-width:0 2.6px 2.6px 0;
+  transform:rotate(43deg);
+}
+
+/* ============ CONTENU ============ */
+.card{
+  background:var(--paper);
+  border:1px solid var(--cream-deep);
+  border-radius:var(--r-lg);
+  padding:18px 18px 4px;
+  margin-bottom:14px;
   box-shadow:var(--shadow-sm);
 }
-.tick{
-  flex:none;width:26px;height:26px;border-radius:50%;
-  background:var(--caramel);display:grid;place-items:center;margin-top:1px;
+.card .num{
+  font-family:"Poppins",sans-serif;font-weight:800;font-size:12.5px;
+  letter-spacing:1.2px;text-transform:uppercase;color:var(--caramel-dark);
+  display:block;margin-bottom:4px;
 }
-.tick svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;}
-.tf li span{font-size:16.5px;line-height:1.55;}
-
-/* ============ CONTENU FORMATION ============ */
-.parts{display:grid;gap:14px;margin-top:26px;}
-.part{
-  background:var(--paper);border:1px solid var(--cream-deep);
-  border-radius:var(--r-lg);padding:18px 18px 16px;
-  box-shadow:var(--shadow-sm);position:relative;overflow:hidden;
-}
-.part::before{
-  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--honey);
-}
-.part .num{
-  font-family:"Poppins",sans-serif;font-weight:700;font-size:12px;
-  letter-spacing:.13em;text-transform:uppercase;color:var(--caramel-dark);
-  display:block;margin-bottom:6px;
-}
-.part h3{margin:0 0 6px;font-size:18px;}
-.part p{font-size:16px;color:var(--choco-soft);}
-.part.annex::before{background:var(--choco-soft);}
-.pill{
-  display:inline-block;background:var(--cream-deep);color:var(--choco);
-  font-family:"Poppins",sans-serif;font-weight:600;font-size:13px;
-  padding:8px 14px;border-radius:999px;margin-top:22px;
-}
+.card h3{margin-bottom:8px;}
+.card p{color:var(--choco-soft);font-size:16.5px;}
+.card.annex{background:var(--cream-deep);border-color:#E5D0AE;}
 
 /* ============ POUR TOI / PAS POUR TOI ============ */
-.fit{display:grid;gap:16px;margin-top:26px;}
-.fit-col{
-  border-radius:var(--r-lg);padding:20px 18px;box-shadow:var(--shadow-sm);
-}
-.fit-yes{background:var(--paper);border:2px solid var(--caramel);}
-.fit-no{background:#F0E7DC;border:2px solid #D8C6B2;}
-.fit-col h3{
-  display:flex;align-items:center;gap:9px;font-size:17px;margin:0 0 14px;
-}
-.fit-no h3{color:var(--choco-soft);}
-.mark{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;}
-.mark svg{width:13px;height:13px;fill:none;stroke:#fff;stroke-width:2.8;stroke-linecap:round;}
-.fit-yes .mark{background:var(--caramel);}
-.fit-no .mark{background:#9A8672;}
-.fit-col li{
-  position:relative;padding-left:20px;margin-bottom:11px;font-size:16px;line-height:1.55;
-}
-.fit-col li:last-child{margin-bottom:0;}
-.fit-col li::before{
-  content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;
-  background:var(--caramel);
-}
-.fit-no li{color:#6B5344;}
-.fit-no li::before{background:#A9927C;}
+.cols{display:grid;gap:16px;}
+.col{border-radius:var(--r-lg);padding:20px 18px 8px;}
+.col h3{margin-bottom:12px;}
+.col ul{list-style:none;margin:0;padding:0;}
+.col li{position:relative;padding-left:28px;margin-bottom:14px;font-size:16.5px;}
+.col-yes{background:#F0F7EC;border:1px solid #D3E6C8;}
+.col-yes h3{color:#3D6B29;}
+.col-yes li{color:#3F5836;}
+.col-yes li::before{content:"✓";position:absolute;left:0;top:-1px;color:#5C9440;font-weight:700;font-size:18px;}
+.col-no{background:#FBEDEA;border:1px solid #F0D4CD;}
+.col-no h3{color:#9C4127;}
+.col-no li{color:#7A4536;}
+.col-no li::before{content:"✕";position:absolute;left:0;top:-1px;color:#C1573A;font-weight:700;font-size:16px;}
 
 /* ============ PRIX ============ */
 .pricing{text-align:center;}
 .price-card{
-  background:var(--paper);border:1px solid var(--cream-deep);
-  border-radius:var(--r-lg);box-shadow:var(--shadow-md);
-  padding:28px 20px 24px;margin-top:24px;text-align:center;
+  background:var(--paper);
+  border:2px solid var(--honey);
+  border-radius:var(--r-lg);
+  padding:26px 20px;
+  box-shadow:var(--shadow-md);
+  max-width:460px;margin:0 auto;
 }
-.price-card .anchor{
-  font-family:"Poppins",sans-serif;font-weight:600;font-size:20px;color:#9A8672;
-  text-decoration:line-through;text-decoration-thickness:2px;margin:0 0 2px;
-}
-.price-card .final{
-  font-family:"Poppins",sans-serif;font-weight:800;
-  font-size:clamp(42px,13vw,58px);line-height:1;color:var(--choco);
-  margin:0 0 6px;letter-spacing:-.03em;
-}
-.price-card .final small{font-size:.42em;font-weight:700;color:var(--caramel-dark);letter-spacing:0;}
-.price-card .once{font-size:15px;color:var(--choco-soft);margin:0 0 20px;}
-.mm{
-  display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0 0;
-}
-.mm span{
-  background:var(--cream-deep);color:var(--choco);
-  font-family:"Poppins",sans-serif;font-weight:600;font-size:13px;
-  padding:7px 13px;border-radius:999px;
-}
-.mm-title{font-size:14px;color:var(--choco-soft);margin:18px 0 0;}
+.price-card .price-old{color:#9C8873;}
+.price-card .price-now{color:var(--caramel-dark);}
+.price-card .price-note{color:var(--choco-soft);}
+.price-card ul{list-style:none;margin:0 0 20px;padding:0;text-align:left;}
+.price-card li{position:relative;padding-left:26px;margin-bottom:10px;font-size:16px;color:var(--choco-soft);}
+.price-card li::before{content:"•";position:absolute;left:6px;color:var(--caramel);font-weight:700;}
+.divider{height:1px;background:var(--cream-deep);margin:18px 0;}
 
 /* ============ FAQ ============ */
-.faq{margin-top:24px;display:grid;gap:10px;}
-.qa{
-  background:var(--paper);border:1px solid var(--cream-deep);
-  border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow-sm);
+.faq-item{
+  background:var(--paper);
+  border:1px solid var(--cream-deep);
+  border-radius:var(--r-md);
+  margin-bottom:10px;
+  overflow:hidden;
 }
-.q{
-  width:100%;display:flex;align-items:flex-start;gap:12px;justify-content:space-between;
-  background:none;border:0;text-align:left;cursor:pointer;
-  padding:17px 16px;font-family:"Poppins",sans-serif;font-weight:600;
-  font-size:16px;color:var(--choco);line-height:1.45;
+.faq-q{
+  width:100%;background:none;border:none;text-align:left;
+  font-family:"Poppins",sans-serif;font-weight:600;font-size:16.5px;color:var(--choco);
+  padding:16px 46px 16px 16px;
+  position:relative;cursor:pointer;line-height:1.4;
 }
-.q:focus-visible{outline:3px solid var(--caramel);outline-offset:-3px;}
-.chev{
-  flex:none;width:22px;height:22px;margin-top:1px;border-radius:50%;
-  background:var(--cream-deep);display:grid;place-items:center;
-  transition:transform .22s ease, background .22s ease;
+.faq-q::after{
+  content:"";position:absolute;right:18px;top:50%;
+  width:9px;height:9px;margin-top:-6px;
+  border:solid var(--caramel);border-width:0 2.4px 2.4px 0;
+  transform:rotate(45deg);transition:transform .22s ease;
 }
-.chev svg{width:11px;height:11px;fill:none;stroke:var(--choco);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;}
-.qa.open .chev{transform:rotate(180deg);background:var(--honey);}
-.a{max-height:0;overflow:hidden;transition:max-height .28s ease;}
-.a-inner{padding:0 16px 17px;font-size:16px;color:var(--choco-soft);}
+.faq-item.open .faq-q::after{transform:rotate(-135deg);margin-top:-2px;}
+.faq-q:focus-visible{outline:3px solid var(--honey);outline-offset:-3px;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease;}
+.faq-a p{padding:0 16px 16px;margin:0;color:var(--choco-soft);font-size:16.5px;}
 
-/* ============ CTA FINAL ============ */
-.final-cta{
-  background:var(--choco);color:var(--cream);text-align:center;padding:56px 0 60px;
+/* ============ CTA FINAL / FOOTER ============ */
+.final{
+  background:linear-gradient(168deg,var(--choco-soft) 0%,var(--choco) 100%);
+  color:var(--cream);text-align:center;
 }
-.final-cta h2{color:var(--cream);font-size:clamp(24px,6.6vw,32px);margin-bottom:18px;}
-.final-cta .cta-note{color:#CBB79E;}
-.final-cta .cta-note strong{color:var(--cream);}
-.final-cta .lock{stroke:var(--honey);}
-.final-price{
-  font-family:"Poppins",sans-serif;font-weight:700;font-size:17px;color:var(--honey);
-  margin:0 0 22px;
-}
-.final-price s{color:#B49B82;font-weight:600;margin-right:8px;text-decoration-thickness:2px;}
-
+.final h2{color:var(--paper);}
+.final .price-now{color:var(--honey);}
+.final .price-old{color:#C9B49C;}
 footer{
-  background:#2E1B12;color:#9C8571;text-align:center;
-  padding:26px 0 34px;font-size:13px;
+  background:var(--choco);color:#B9A48E;
+  text-align:center;font-size:14px;padding:26px var(--pad) 34px;
 }
-footer p{margin:0 0 4px;}
-
+footer p{margin:0 0 6px;}
 
 @media (min-width:560px){
-  :root{--pad:24px;}
-  body{font-size:17.5px;}
-  section{padding:64px 0;}
-  .hero{padding:44px 0 56px;}
-  .cta{font-size:17px;padding:19px 24px;}
-  .fit{grid-template-columns:1fr 1fr;align-items:start;}
-  .cta-inline{max-width:420px;margin-inline:auto;}
+  section{padding:60px 0;}
+  .hero{padding:48px 0 54px;}
+  .cols{grid-template-columns:1fr 1fr;align-items:start;}
 }
+
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important;scroll-behavior:auto!important;}
 }
@@ -397,7 +319,7 @@ footer p{margin:0 0 4px;}
   <p class="proof"><span class="stars" aria-hidden="true">★★★★★</span> +138 client(e)s satisfait(e)s</p>
 </div>
 
-<!-- ==================== 1bis. AVIS CLIENTS ==================== -->
+<!-- ==================== 0bis. AVIS CLIENTS ==================== -->
 <section class="sec-cream tight">
   <div class="wrap">
     <p class="eyebrow">Elles l'ont fait</p>
@@ -437,7 +359,7 @@ footer p{margin:0 0 4px;}
 <header class="hero">
   <div class="wrap">
     <span class="badge">Guide PDF · 18 pages</span>
-    <h1>COOKIES<span>BUSINESS</span></h1>
+    <h1>COOKIES BUSINESS</h1>
     <p class="hero-sub">La formation complète pour lancer et rentabiliser ton business de cookies maison — recettes, chiffres, fournisseurs et stratégie de vente réunis dans un seul guide.</p>
 
     <picture>
@@ -447,18 +369,13 @@ footer p{margin:0 0 4px;}
     </picture>
 
     <div class="price-block">
-      <div class="price-row">
-        <span class="price-now">4 900 FCFA</span>
-        <span class="price-old">15 000 FCFA</span>
-      </div>
-      <p class="price-label">Paiement unique · Téléchargement immédiat</p>
+      <span class="price-old">15 000 FCFA</span>
+      <span class="price-now">4 900 FCFA</span>
+      <p class="price-note">Téléchargement immédiat après paiement</p>
     </div>
 
     <a class="cta" href="https://astucesconsort.mymaketou.shop/fr/products/cookies-business/checkout">Télécharger COOKIES BUSINESS maintenant — 4 900 FCFA</a>
-    <p class="cta-note">
-      <svg class="lock" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-      Paiement <strong>Mobile Money</strong><span class="mm-list">Wave, MTN, Orange Money, Moov</span>
-    </p>
+    <p class="pay">Paiement Mobile Money : Wave, MTN, Orange Money, Moov</p>
   </div>
 </header>
 
@@ -466,100 +383,101 @@ footer p{margin:0 0 4px;}
 <section class="sec-cream mirror">
   <div class="wrap">
     <p class="eyebrow">Ça te parle ?</p>
-    <h2>Tu passes tes soirées en cuisine. Mais est-ce que tu gagnes vraiment ?</h2>
+    <h2>Tu cuisines beaucoup. Mais tu ne sais pas ce que ça te rapporte.</h2>
     <p>Tu as trouvé une recette de cookies qui plaît. Tu as fait une fournée, tes proches ont adoré, tu as vendu quelques boîtes autour de toi. Alors tu recommences la semaine suivante. Puis encore.</p>
     <p>Sans jamais t'arrêter pour calculer ce que t'ont vraiment coûté la farine, le beurre, le sucre, le chocolat, le gaz et l'emballage.</p>
-    <p class="last">Après quelques semaines, tu réalises que tu passes tes soirées en cuisine pour à peine plus que ce que tu as dépensé. Tu ne sais même pas si tu gagnes de l'argent, ou si tu te fatigues pour rien.</p>
+    <p>Après quelques semaines, tu réalises que tu passes tes soirées en cuisine pour à peine plus que ce que tu as dépensé. <strong>Tu ne sais même pas si tu gagnes de l'argent, ou si tu te fatigues pour rien.</strong></p>
   </div>
 </section>
 
 <!-- ==================== 3. LA BASCULE ==================== -->
 <section class="pivot">
   <div class="wrap">
-    <p>Ce n'est jamais un problème de recette.<em>C'est toujours un problème de prix et de régularité.</em></p>
+    <p>Ce n'est jamais un problème de recette.<br><span class="hl">C'est toujours un problème de prix et de régularité.</span></p>
   </div>
-  <div class="crumbs" aria-hidden="true"></div>
 </section>
 
 <!-- ==================== 4. LA TRANSFORMATION ==================== -->
-<section class="sec-cream">
+<section class="sec-paper">
   <div class="wrap">
     <p class="eyebrow">La transformation</p>
     <h2>Dans 7 jours, tu auras</h2>
-    <ul class="tf">
-      <li><span class="tick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span><span>Une recette maîtrisée, plus 4 variantes, avec deux méthodes de cuisson même sans four</span></li>
-      <li><span class="tick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span><span>Ton prix de revient calculé au franc près</span></li>
-      <li><span class="tick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span><span>Ton prix de vente fixé par le calcul — pas deviné au feeling</span></li>
-      <li><span class="tick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span><span>Tes premiers fournisseurs identifiés dans ta ville</span></li>
-      <li><span class="tick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span><span>Ta première fournée vendue, grâce à un vrai plan de lancement</span></li>
+    <ul class="ticks">
+      <li>Une <strong>recette maîtrisée</strong>, plus 4 variantes, avec deux méthodes de cuisson même sans four</li>
+      <li>Ton <strong>prix de revient calculé au franc près</strong></li>
+      <li>Ton <strong>prix de vente fixé par le calcul</strong> — pas deviné au feeling</li>
+      <li>Tes <strong>premiers fournisseurs identifiés</strong> dans ta ville</li>
+      <li>Un <strong>plan de lancement jour par jour</strong> pour vendre ta première fournée, sans improviser</li>
     </ul>
   </div>
 </section>
 
-<!-- ==================== 5. CE QUE CONTIENT LA FORMATION ==================== -->
-<section class="sec-deep">
+<!-- ==================== 5. CONTENU DE LA FORMATION ==================== -->
+<section class="sec-cream">
   <div class="wrap">
-    <p class="eyebrow">Le contenu</p>
-    <h2>Ce que contient la formation</h2>
-    <p class="lede">Un seul guide de 18 pages.</p>
+    <p class="eyebrow">Ce que contient la formation</p>
+    <h2>Un seul guide de 18 pages, six parties</h2>
 
-    <div class="parts">
-      <article class="part">
-        <span class="num">Partie 1</span>
-        <h3>Les recettes</h3>
-        <p>La base, 4 variantes, deux méthodes de cuisson sans four.</p>
-      </article>
-      <article class="part">
-        <span class="num">Partie 2</span>
-        <h3>Le positionnement</h3>
-        <p>Pourquoi rester mono-produit, et pourquoi la plupart abandonnent après un an.</p>
-      </article>
-      <article class="part">
-        <span class="num">Partie 3</span>
-        <h3>Les chiffres</h3>
-        <p>Calculateur intégré : prix de revient, prix de vente, seuil de rentabilité.</p>
-      </article>
-      <article class="part">
-        <span class="num">Partie 4</span>
-        <h3>S'approvisionner</h3>
-        <p>Où acheter en gros à Abidjan, Dakar, Cotonou.</p>
-      </article>
-      <article class="part">
-        <span class="num">Partie 5</span>
-        <h3>Vendre</h3>
-        <p>Plan de lancement 7 jours, structure de message WhatsApp, groupe acheteuses.</p>
-      </article>
-      <article class="part">
-        <span class="num">Partie 6</span>
-        <h3>Tenir dans la durée</h3>
-        <p>Fidélisation, variation des parfums, erreurs à éviter.</p>
-      </article>
-      <article class="part annex">
-        <span class="num">Annexes</span>
-        <h3>Tes outils prêts à l'emploi</h3>
-        <p>Fiche calculateur imprimable + checklist de lancement.</p>
-      </article>
+    <div class="card">
+      <span class="num">Partie 1</span>
+      <h3>Les recettes</h3>
+      <p>La base, 4 variantes, deux méthodes de cuisson sans four.</p>
     </div>
-    <span class="pill">18 pages · PDF · lisible sur téléphone</span>
+
+    <div class="card">
+      <span class="num">Partie 2</span>
+      <h3>Le positionnement</h3>
+      <p>Pourquoi rester mono-produit, et pourquoi la plupart abandonnent après un an.</p>
+    </div>
+
+    <div class="card">
+      <span class="num">Partie 3</span>
+      <h3>Les chiffres</h3>
+      <p>Calculateur intégré : prix de revient, prix de vente, seuil de rentabilité.</p>
+    </div>
+
+    <div class="card">
+      <span class="num">Partie 4</span>
+      <h3>S'approvisionner</h3>
+      <p>Où acheter en gros à Abidjan, Dakar, Cotonou.</p>
+    </div>
+
+    <div class="card">
+      <span class="num">Partie 5</span>
+      <h3>Vendre</h3>
+      <p>Plan de lancement 7 jours, structure de message WhatsApp, groupe acheteuses.</p>
+    </div>
+
+    <div class="card">
+      <span class="num">Partie 6</span>
+      <h3>Tenir dans la durée</h3>
+      <p>Fidélisation, variation des parfums, erreurs à éviter.</p>
+    </div>
+
+    <div class="card annex">
+      <span class="num">Annexes</span>
+      <h3>Fiche calculateur imprimable + checklist de lancement</h3>
+      <p>À imprimer et remplir dès la première fournée.</p>
+    </div>
   </div>
 </section>
 
 <!-- ==================== 6. POUR TOI / PAS POUR TOI ==================== -->
-<section class="sec-cream">
+<section class="sec-paper">
   <div class="wrap">
     <p class="eyebrow">Avant d'acheter</p>
-    <h2>C'est pour toi ?</h2>
-    <div class="fit">
-      <div class="fit-col fit-yes">
-        <h3><span class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"/></svg></span>Pour toi si</h3>
+    <h2>C'est pour qui, exactement ?</h2>
+    <div class="cols">
+      <div class="col col-yes">
+        <h3>Pour toi si</h3>
         <ul>
           <li>Tu veux un revenu complémentaire que tu construis toi-même</li>
           <li>Tu es prêt à sortir vendre, pas seulement à lire un guide de plus</li>
           <li>Tu préfères un plan clair à improviser au feeling</li>
         </ul>
       </div>
-      <div class="fit-col fit-no">
-        <h3><span class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>Pas pour toi si</h3>
+      <div class="col col-no">
+        <h3>Pas pour toi si</h3>
         <ul>
           <li>Tu cherches de l'argent sans effort ni sortie sur le terrain</li>
           <li>Tu penses avoir besoin d'un local ou de matériel pro avant de commencer</li>
@@ -571,22 +489,23 @@ footer p{margin:0 0 4px;}
 </section>
 
 <!-- ==================== 7. LE PRIX ==================== -->
-<section class="sec-paper pricing" id="prix">
+<section class="sec-deep pricing">
   <div class="wrap">
     <p class="eyebrow">Le prix</p>
     <h2>Tout le guide, un seul paiement</h2>
-
     <div class="price-card">
-      <p class="anchor">15 000 FCFA</p>
-      <p class="final">4 900 <small>FCFA</small></p>
-      <p class="once">Paiement unique · Téléchargement immédiat après confirmation</p>
-
-      <a class="cta cta-inline" href="https://astucesconsort.mymaketou.shop/fr/products/cookies-business/checkout">Télécharger COOKIES BUSINESS maintenant — 4 900 FCFA</a>
-
-      <p class="mm-title">Paiement par Mobile Money</p>
-      <div class="mm">
-        <span>Wave</span><span>MTN</span><span>Orange Money</span><span>Moov</span>
-      </div>
+      <ul>
+        <li>Guide COOKIES BUSINESS — 18 pages, 6 parties</li>
+        <li>Calculateur prix de revient / prix de vente</li>
+        <li>Plan de lancement 7 jours</li>
+        <li>Fiche calculateur imprimable + checklist</li>
+      </ul>
+      <div class="divider"></div>
+      <span class="price-old">15 000 FCFA</span>
+      <span class="price-now">4 900 FCFA</span>
+      <p class="price-note">Téléchargement immédiat après confirmation du paiement</p>
+      <a class="cta" href="https://astucesconsort.mymaketou.shop/fr/products/cookies-business/checkout">Télécharger COOKIES BUSINESS maintenant — 4 900 FCFA</a>
+      <p class="pay">Paiement Mobile Money : Wave, MTN, Orange Money, Moov</p>
     </div>
   </div>
 </section>
@@ -597,109 +516,66 @@ footer p{margin:0 0 4px;}
     <p class="eyebrow">Questions fréquentes</p>
     <h2>Tu te demandes peut-être…</h2>
 
-    <div class="faq" id="faq">
-      <div class="qa">
-        <button class="q" type="button" aria-expanded="false" aria-controls="a1" id="q1">
-          Je n'ai jamais fait de cookies, c'est trop compliqué ?
-          <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"/></svg></span>
-        </button>
-        <div class="a" id="a1" role="region" aria-labelledby="q1"><div class="a-inner">Non, la recette de base est expliquée pas à pas, avec les erreurs à éviter clairement indiquées.</div></div>
-      </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">Je n'ai jamais fait de cookies, c'est trop compliqué ?</button>
+      <div class="faq-a"><p>Non, la recette de base est expliquée pas à pas, avec les erreurs à éviter clairement indiquées.</p></div>
+    </div>
 
-      <div class="qa">
-        <button class="q" type="button" aria-expanded="false" aria-controls="a2" id="q2">
-          Il me faut un four ?
-          <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"/></svg></span>
-        </button>
-        <div class="a" id="a2" role="region" aria-labelledby="q2"><div class="a-inner">Non, la Partie 1 inclut deux méthodes complètes pour cuire sans four.</div></div>
-      </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">Il me faut un four ?</button>
+      <div class="faq-a"><p>Non, la Partie 1 inclut deux méthodes complètes pour cuire sans four.</p></div>
+    </div>
 
-      <div class="qa">
-        <button class="q" type="button" aria-expanded="false" aria-controls="a3" id="q3">
-          Je trouve mes ingrédients où ?
-          <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"/></svg></span>
-        </button>
-        <div class="a" id="a3" role="region" aria-labelledby="q3"><div class="a-inner">La Partie 4 donne les pôles d'approvisionnement en gros à Abidjan, Dakar et Cotonou.</div></div>
-      </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">Je trouve mes ingrédients où ?</button>
+      <div class="faq-a"><p>La Partie 4 donne les pôles d'approvisionnement en gros à Abidjan, Dakar et Cotonou.</p></div>
+    </div>
 
-      <div class="qa">
-        <button class="q" type="button" aria-expanded="false" aria-controls="a4" id="q4">
-          Je reçois comment après le paiement ?
-          <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"/></svg></span>
-        </button>
-        <div class="a" id="a4" role="region" aria-labelledby="q4"><div class="a-inner">Téléchargement immédiat, dès la confirmation du paiement.</div></div>
-      </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">Je reçois comment après le paiement ?</button>
+      <div class="faq-a"><p>Téléchargement immédiat, dès la confirmation du paiement.</p></div>
+    </div>
 
-      <div class="qa">
-        <button class="q" type="button" aria-expanded="false" aria-controls="a5" id="q5">
-          Et si je n'arrive pas à vendre ?
-          <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"/></svg></span>
-        </button>
-        <div class="a" id="a5" role="region" aria-labelledby="q5"><div class="a-inner">La Partie 5 donne un plan de lancement jour par jour et la structure exacte d'un message de vente qui fonctionne.</div></div>
-      </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">Et si je n'arrive pas à vendre ?</button>
+      <div class="faq-a"><p>La Partie 5 donne un plan de lancement jour par jour et la structure exacte d'un message de vente qui fonctionne.</p></div>
+    </div>
 
-      <div class="qa">
-        <button class="q" type="button" aria-expanded="false" aria-controls="a6" id="q6">
-          Je peux payer avec Mobile Money ?
-          <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"/></svg></span>
-        </button>
-        <div class="a" id="a6" role="region" aria-labelledby="q6"><div class="a-inner">Oui — Wave, MTN, Orange Money et Moov sont acceptés.</div></div>
-      </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">Je peux payer avec Mobile Money ?</button>
+      <div class="faq-a"><p>Oui — Wave, MTN, Orange Money et Moov sont acceptés.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ==================== 9. CTA FINAL ==================== -->
-<section class="final-cta" id="final">
+<section class="final">
   <div class="wrap">
-    <h2>Télécharge COOKIES BUSINESS</h2>
-    <p class="final-price"><s>15 000 FCFA</s>4 900 FCFA</p>
-    <a class="cta cta-inline" href="https://astucesconsort.mymaketou.shop/fr/products/cookies-business/checkout">Télécharger COOKIES BUSINESS maintenant — 4 900 FCFA</a>
-    <p class="cta-note">
-      <svg class="lock" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-      <strong>Mobile Money</strong><span class="mm-list">Wave, MTN, Orange Money, Moov</span>
-    </p>
+    <h2>Prêt à lancer ?</h2>
+    <div class="price-block">
+      <span class="price-old">15 000 FCFA</span>
+      <span class="price-now">4 900 FCFA</span>
+    </div>
+    <a class="cta" href="https://astucesconsort.mymaketou.shop/fr/products/cookies-business/checkout">Télécharger COOKIES BUSINESS maintenant — 4 900 FCFA</a>
+    <p class="pay">Paiement Mobile Money : Wave, MTN, Orange Money, Moov</p>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <p>COOKIES BUSINESS — Guide PDF de 18 pages.</p>
-    <p>Téléchargement immédiat après confirmation du paiement.</p>
-  </div>
+  <p>COOKIES BUSINESS — guide numérique au format PDF.</p>
+  <p>Produit digital, livré par téléchargement.</p>
 </footer>
 
 <script>
-(function(){
-  /* ---------- FAQ accordéon ---------- */
-  document.querySelectorAll('#faq .q').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var qa = btn.parentElement;
-      var panel = qa.querySelector('.a');
-      var open = qa.classList.contains('open');
-
-      // referme les autres
-      document.querySelectorAll('#faq .qa.open').forEach(function(other){
-        if(other === qa) return;
-        other.classList.remove('open');
-        other.querySelector('.q').setAttribute('aria-expanded','false');
-        other.querySelector('.a').style.maxHeight = '';
-      });
-
-      qa.classList.toggle('open', !open);
-      btn.setAttribute('aria-expanded', String(!open));
-      panel.style.maxHeight = open ? '' : panel.scrollHeight + 'px';
-    });
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var item = btn.parentElement;
+    var panel = item.querySelector('.faq-a');
+    var open = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    panel.style.maxHeight = open ? panel.scrollHeight + 'px' : 0;
   });
-
-  // recalcule la hauteur ouverte au redimensionnement
-  window.addEventListener('resize', function(){
-    document.querySelectorAll('#faq .qa.open .a').forEach(function(p){
-      p.style.maxHeight = p.scrollHeight + 'px';
-    });
-  });
-
-})();
+});
 </script>
 
 </body>
