@@ -99,6 +99,18 @@ h3{font-size:19px;font-weight:700;}
   box-shadow:var(--shadow-cta);
   cursor:pointer;
   transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  position:relative;overflow:hidden;isolation:isolate;
+}
+/* reflet brillant en boucle */
+.cta::after{
+  content:"";position:absolute;top:-10%;left:-70%;width:42%;height:120%;
+  background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.48) 50%,transparent 100%);
+  transform:skewX(-20deg);pointer-events:none;
+  animation:shine 3.4s ease-in-out infinite;
+}
+@keyframes shine{
+  0%{left:-70%;}
+  55%,100%{left:135%;}
 }
 .cta:hover{filter:brightness(1.05);box-shadow:0 6px 18px rgba(168,93,30,.34);}
 .cta:active{transform:translateY(1px);}
@@ -193,6 +205,13 @@ h3{font-size:19px;font-weight:700;}
   border-radius:var(--r-lg);padding:16px 18px;box-shadow:var(--shadow-sm);
 }
 .swipe-hint{font-size:13.5px;color:var(--choco-soft);margin:2px 0 0;}
+/* section avis en tête de page : compacte verticalement */
+section.tight{padding:22px 0 24px;}
+.tight .eyebrow{margin-bottom:6px;}
+.tight h2{font-size:clamp(21px,5.4vw,27px);margin-bottom:0;}
+.tight .revs{margin-top:14px;padding-bottom:10px;}
+.tight .rev{padding:14px 16px;}
+.tight .rev p{font-size:15.5px;line-height:1.5;}
 .rev .stars{color:var(--caramel);}
 .rev .who{
   font-family:"Poppins",sans-serif;font-weight:700;font-size:15px;
@@ -356,27 +375,6 @@ footer{
 }
 footer p{margin:0 0 4px;}
 
-/* ============ BARRE STICKY ============ */
-.sticky{
-  position:fixed;left:0;right:0;bottom:0;z-index:50;
-  background:var(--paper);
-  border-top:1px solid var(--cream-deep);
-  box-shadow:0 -4px 18px rgba(58,35,24,.1);
-  padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom));
-  transform:translateY(115%);
-  transition:transform .3s ease;
-}
-.sticky.show{transform:translateY(0);}
-.sticky-in{
-  max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:12px;
-}
-.sticky-price{flex:none;line-height:1.15;}
-.sticky-price b{
-  display:block;font-family:"Poppins",sans-serif;font-weight:800;
-  font-size:19px;color:var(--choco);
-}
-.sticky-price s{font-size:12px;color:#9A8672;}
-.sticky .cta{padding:14px 12px;font-size:15px;}
 
 @media (min-width:560px){
   :root{--pad:24px;}
@@ -400,7 +398,7 @@ footer p{margin:0 0 4px;}
 </div>
 
 <!-- ==================== 1bis. AVIS CLIENTS ==================== -->
-<section class="sec-cream">
+<section class="sec-cream tight">
   <div class="wrap">
     <p class="eyebrow">Elles l'ont fait</p>
     <h2>+138 client(e)s satisfait(e)s</h2>
@@ -671,17 +669,6 @@ footer p{margin:0 0 4px;}
   </div>
 </footer>
 
-<!-- ==================== BARRE D'ACHAT STICKY ==================== -->
-<div class="sticky" id="sticky" aria-hidden="true">
-  <div class="sticky-in">
-    <div class="sticky-price">
-      <b>4 900 FCFA</b>
-      <s>15 000 FCFA</s>
-    </div>
-    <a class="cta" href="https://astucesconsort.mymaketou.shop/fr/products/cookies-business/checkout">Télécharger maintenant</a>
-  </div>
-</div>
-
 <script>
 (function(){
   /* ---------- FAQ accordéon ---------- */
@@ -712,34 +699,6 @@ footer p{margin:0 0 4px;}
     });
   });
 
-  /* ---------- Barre sticky : visible après le hero, cachée sur les blocs d'achat ---------- */
-  var bar = document.getElementById('sticky');
-  var hero = document.querySelector('.hero');
-  var zones = [document.getElementById('prix'), document.getElementById('final')];
-  var pastHero = false, onBuyZone = false;
-
-  function render(){
-    var show = pastHero && !onBuyZone;
-    bar.classList.toggle('show', show);
-    bar.setAttribute('aria-hidden', show ? 'false' : 'true');
-  }
-
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(e){
-      pastHero = !e[0].isIntersecting;
-      render();
-    }, {threshold:0}).observe(hero);
-
-    var visible = new Set();
-    var zoneObs = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting) visible.add(en.target); else visible.delete(en.target);
-      });
-      onBuyZone = visible.size > 0;
-      render();
-    }, {threshold:0});
-    zones.forEach(function(z){ if(z) zoneObs.observe(z); });
-  }
 })();
 </script>
 
