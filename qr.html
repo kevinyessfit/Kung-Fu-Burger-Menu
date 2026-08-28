@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QR code du menu — COOKIES BUSINESS</title>
+<meta name="description" content="Affichette à imprimer : scanne le QR code pour ouvrir le menu.">
+<meta name="theme-color" content="#3A2318">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --choco:#3A2318;
+  --choco-soft:#5C3A26;
+  --caramel-dark:#A85D1E;
+  --honey:#E3A23D;
+  --cream:#FBF3E7;
+  --cream-deep:#F3E2C7;
+  --paper:#FFFDF9;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;background:var(--cream);color:#2B1B12;
+  font-family:"Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px;line-height:1.6;
+}
+h1,h2{font-family:"Poppins",sans-serif;color:var(--choco);margin:0 0 12px;line-height:1.2;}
+.wrap{max-width:620px;margin:0 auto;padding:28px 20px 44px;}
+
+/* ---------- L'affichette (seule partie imprimée) ---------- */
+.card{
+  background:var(--paper);
+  border:3px solid var(--choco);
+  border-radius:18px;
+  padding:34px 26px 30px;
+  text-align:center;
+  box-shadow:0 8px 26px rgba(58,35,24,.14);
+}
+.card .eyebrow{
+  font-family:"Poppins",sans-serif;font-weight:700;font-size:13px;
+  letter-spacing:1.6px;text-transform:uppercase;color:var(--caramel-dark);
+  margin:0 0 8px;
+}
+.card h1{font-size:clamp(28px,7.4vw,38px);font-weight:800;letter-spacing:-.4px;}
+.card .sub{font-size:17px;color:var(--choco-soft);margin:0 auto 24px;max-width:360px;}
+.qr{
+  width:min(320px,72vw);height:auto;margin:0 auto 22px;display:block;
+  border:10px solid var(--paper);border-radius:10px;
+}
+.steps{
+  list-style:none;margin:0 auto;padding:0;max-width:340px;text-align:left;
+  counter-reset:s;
+}
+.steps li{
+  counter-increment:s;position:relative;padding-left:38px;margin-bottom:11px;
+  font-size:16px;color:var(--choco-soft);
+}
+.steps li::before{
+  content:counter(s);
+  position:absolute;left:0;top:1px;
+  width:26px;height:26px;border-radius:50%;
+  background:var(--honey);color:var(--choco);
+  font-family:"Poppins",sans-serif;font-weight:800;font-size:14px;
+  display:flex;align-items:center;justify-content:center;
+}
+.url{
+  font-family:"Poppins",sans-serif;font-weight:600;font-size:14px;
+  color:var(--choco-soft);word-break:break-all;
+  margin:22px 0 0;padding-top:18px;border-top:1px solid var(--cream-deep);
+}
+
+/* ---------- Notice écran (non imprimée) ---------- */
+.notice{margin-top:30px;}
+.notice h2{font-size:21px;font-weight:700;}
+.notice p{color:var(--choco-soft);font-size:16px;}
+.notice ul{color:var(--choco-soft);font-size:16px;padding-left:22px;}
+.notice li{margin-bottom:8px;}
+.notice code{
+  background:var(--cream-deep);border-radius:6px;padding:2px 6px;
+  font-size:14.5px;word-break:break-all;
+}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 26px;}
+.btn{
+  flex:1 1 200px;text-align:center;text-decoration:none;
+  font-family:"Poppins",sans-serif;font-weight:700;font-size:16px;
+  padding:14px 16px;border-radius:11px;
+  background:var(--choco);color:var(--paper);
+  border:2px solid var(--choco);cursor:pointer;
+}
+.btn.ghost{background:transparent;color:var(--choco);}
+.btn:focus-visible{outline:3px solid var(--honey);outline-offset:3px;}
+
+@media print{
+  @page{margin:14mm;}
+  body{background:#FFF;}
+  .wrap{padding:0;max-width:none;}
+  .card{border-radius:0;box-shadow:none;border-width:3px;page-break-inside:avoid;}
+  .qr{width:78mm;}
+  .notice,.btns{display:none!important;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ AFFICHETTE À IMPRIMER ============ -->
+  <div class="card">
+    <p class="eyebrow">Notre carte, sur ton téléphone</p>
+    <h1>Scanne le menu</h1>
+    <p class="sub">Pas d'application à installer. Ouvre l'appareil photo, vise le code.</p>
+
+    <img class="qr" src="menu-qr.svg" width="320" height="320"
+         alt="QR code menant au menu en ligne de COOKIES BUSINESS">
+
+    <ol class="steps">
+      <li>Ouvre l'appareil photo de ton téléphone.</li>
+      <li>Vise le QR code ci-dessus.</li>
+      <li>Touche le lien qui apparaît : le menu s'ouvre.</li>
+    </ol>
+
+    <p class="url" id="url">kevinyessfit.github.io/Business-Cookie/menu.html</p>
+  </div>
+
+  <!-- ============ NOTICE (écran seulement) ============ -->
+  <div class="btns">
+    <button class="btn" type="button" onclick="window.print()">Imprimer l'affichette</button>
+    <a class="btn ghost" href="menu.html">Voir le menu</a>
+  </div>
+
+  <div class="notice">
+    <h2>Comment s'en servir</h2>
+    <p>
+      Imprime cette page : seule l'affichette sort au papier, sans les boutons.
+      Pose-la sur les tables, colle-la en vitrine, ou glisse-la dans les boîtes
+      de commande.
+    </p>
+    <ul>
+      <li>Le QR code existe aussi en fichiers séparés : <code>menu-qr.svg</code>
+        (impression grand format, sans perte de qualité) et
+        <code>menu-qr.png</code> (réseaux sociaux, WhatsApp).</li>
+      <li>Le code renvoie vers <code>menu.html</code>. Tu peux changer le menu
+        autant que tu veux : <strong>le QR code, lui, ne change jamais</strong>.
+        Les affichettes déjà imprimées restent valables.</li>
+      <li>Pour pointer vers une autre adresse (ton propre domaine par exemple) :
+        <code>python3 tools/make-qr.py https://ton-domaine.com/menu.html</code>,
+        puis mets à jour l'adresse affichée en bas de l'affichette.</li>
+      <li>Imprime le QR à <strong>3 cm de côté minimum</strong> pour qu'il se
+        scanne facilement, et garde la marge blanche autour.</li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>
