@@ -3,24 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>QR code du menu — COOKIES BUSINESS</title>
+<title>QR code du menu — KUNG FU BURGER</title>
 <meta name="description" content="Affichette à imprimer : scanne le QR code pour ouvrir le menu.">
-<meta name="theme-color" content="#3A2318">
+<meta name="theme-color" content="#F0641E">
 <meta name="robots" content="noindex">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --choco:#3A2318;
-  --choco-soft:#5C3A26;
-  --caramel-dark:#A85D1E;
-  --honey:#E3A23D;
-  --cream:#FBF3E7;
-  --cream-deep:#F3E2C7;
-  --paper:#FFFDF9;
+  --choco:#2A1608;
+  --choco-soft:#6B4A31;
+  --caramel-dark:#C74A0E;
+  --honey:#FFC820;
+  --cream:#FFF9F0;
+  --cream-deep:#F2DFC4;
+  --paper:#FFFFFF;
 }
 *{box-sizing:border-box;}
 body{
@@ -28,20 +28,20 @@ body{
   font-family:"Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   font-size:17px;line-height:1.6;
 }
-h1,h2{font-family:"Poppins",sans-serif;color:var(--choco);margin:0 0 12px;line-height:1.2;}
+h1,h2{font-family:"Baloo 2",sans-serif;color:var(--choco);margin:0 0 12px;line-height:1.2;}
 .wrap{max-width:620px;margin:0 auto;padding:28px 20px 44px;}
 
 /* ---------- L'affichette (seule partie imprimée) ---------- */
 .card{
   background:var(--paper);
-  border:3px solid var(--choco);
+  border:3px solid var(--caramel-dark);
   border-radius:18px;
   padding:34px 26px 30px;
   text-align:center;
   box-shadow:0 8px 26px rgba(58,35,24,.14);
 }
 .card .eyebrow{
-  font-family:"Poppins",sans-serif;font-weight:700;font-size:13px;
+  font-family:"Baloo 2",sans-serif;font-weight:800;font-size:13px;
   letter-spacing:1.6px;text-transform:uppercase;color:var(--caramel-dark);
   margin:0 0 8px;
 }
@@ -64,11 +64,11 @@ h1,h2{font-family:"Poppins",sans-serif;color:var(--choco);margin:0 0 12px;line-h
   position:absolute;left:0;top:1px;
   width:26px;height:26px;border-radius:50%;
   background:var(--honey);color:var(--choco);
-  font-family:"Poppins",sans-serif;font-weight:800;font-size:14px;
+  font-family:"Baloo 2",sans-serif;font-weight:800;font-size:14px;
   display:flex;align-items:center;justify-content:center;
 }
 .url{
-  font-family:"Poppins",sans-serif;font-weight:600;font-size:14px;
+  font-family:"Baloo 2",sans-serif;font-weight:600;font-size:14px;
   color:var(--choco-soft);word-break:break-all;
   margin:22px 0 0;padding-top:18px;border-top:1px solid var(--cream-deep);
 }
@@ -86,7 +86,7 @@ h1,h2{font-family:"Poppins",sans-serif;color:var(--choco);margin:0 0 12px;line-h
 .btns{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 26px;}
 .btn{
   flex:1 1 200px;text-align:center;text-decoration:none;
-  font-family:"Poppins",sans-serif;font-weight:700;font-size:16px;
+  font-family:"Baloo 2",sans-serif;font-weight:700;font-size:16px;
   padding:14px 16px;border-radius:11px;
   background:var(--choco);color:var(--paper);
   border:2px solid var(--choco);cursor:pointer;
@@ -109,17 +109,17 @@ h1,h2{font-family:"Poppins",sans-serif;color:var(--choco);margin:0 0 12px;line-h
 
   <!-- ============ AFFICHETTE À IMPRIMER ============ -->
   <div class="card">
-    <p class="eyebrow">Notre carte, sur ton téléphone</p>
-    <h1>Scanne le menu</h1>
-    <p class="sub">Pas d'application à installer. Ouvre l'appareil photo, vise le code.</p>
+    <p class="eyebrow">KUNG FU BURGER · 功夫汉堡</p>
+    <h1>Scanne &amp; commande</h1>
+    <p class="sub">La carte complète sur ton téléphone. Choisis tes plats et envoie ta commande sur WhatsApp.</p>
 
     <img class="qr" src="menu-qr.svg" width="320" height="320"
-         alt="QR code menant au menu en ligne de COOKIES BUSINESS">
+         alt="QR code menant au menu en ligne de KUNG FU BURGER">
 
     <ol class="steps">
       <li>Ouvre l'appareil photo de ton téléphone.</li>
       <li>Vise le QR code ci-dessus.</li>
-      <li>Touche le lien qui apparaît : le menu s'ouvre.</li>
+      <li>Touche le lien : la carte s'ouvre, tu commandes.</li>
     </ol>
 
     <p class="url" id="url">kevinyessfit.github.io/Business-Cookie/menu.html</p>
