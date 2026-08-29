@@ -9,7 +9,9 @@ accessible par QR code.
 | `qr.html` | L'affichette à imprimer (QR code + mode d'emploi) |
 | `menu-qr.svg` / `menu-qr.png` | Le QR code seul, pour l'impression et les réseaux |
 | `tools/make-qr.py` | Régénère le QR code si l'adresse du menu change |
-| `images/` | Les 40 photos de plats, découpées dans la carte papier |
+| `images/` | Les 40 photos de plats + le logo, découpés dans la carte papier |
+| `og-image.jpg` | L'aperçu affiché quand le lien est partagé (WhatsApp, TikTok) |
+| `favicon.png` | L'icône de l'onglet et du raccourci sur l'écran d'accueil |
 
 ## 1. Mettre le menu en ligne
 
@@ -33,9 +35,13 @@ dise `kung-fu-burger`, renomme le dépôt sur GitHub :
 **Settings → Repository name → Rename**. L'adresse devient alors
 `https://kevinyessfit.github.io/kung-fu-burger/`.
 
-Dans ce cas il faut **régénérer le QR code** (voir plus bas) et mettre à
-jour l'adresse affichée en bas de l'affichette, dans `qr.html`. À faire
-avant d'imprimer les affichettes, pas après.
+Dans ce cas, trois choses sont à reprendre — **avant d'imprimer les
+affichettes, pas après** :
+
+1. **régénérer le QR code** (voir plus bas) ;
+2. l'adresse affichée en bas de l'affichette, dans `qr.html` ;
+3. les balises `og:url` et `og:image` en haut de `index.html`, qui doivent
+   rester des adresses absolues pour que l'aperçu de partage fonctionne.
 
 ## 2. Comment le client commande
 

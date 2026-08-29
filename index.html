@@ -9,6 +9,19 @@
 <meta property="og:title" content="Menu — KUNG FU BURGER">
 <meta property="og:description" content="Burgers, menus, snacks et boissons. Choisis, ajoute au panier, commande sur WhatsApp.">
 <meta property="og:type" content="restaurant.menu">
+<!-- Apercu affiche quand le lien est partage (WhatsApp, Facebook, TikTok).
+     L'adresse doit rester absolue : a mettre a jour si le depot est renomme. -->
+<meta property="og:url" content="https://kevinyessfit.github.io/Business-Cookie/">
+<meta property="og:image" content="https://kevinyessfit.github.io/Business-Cookie/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="KUNG FU BURGER">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kevinyessfit.github.io/Business-Cookie/og-image.jpg">
+
+<link rel="icon" href="favicon.png" sizes="180x180">
+<link rel="apple-touch-icon" href="favicon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,12 +71,9 @@ button{font:inherit;cursor:pointer;}
   background:linear-gradient(160deg,var(--orange) 0%,var(--red) 100%);
   color:#FFF;padding:26px 0 22px;text-align:center;
 }
-.head .kf{
-  display:inline-block;background:var(--yellow);color:var(--red);
-  font-family:"Baloo 2",sans-serif;font-weight:800;font-size:12.5px;
-  letter-spacing:2px;text-transform:uppercase;
-  padding:5px 14px;border-radius:999px;margin-bottom:12px;
-  border:2px solid rgba(0,0,0,.14);
+.head .kf-logo{
+  width:108px;height:auto;margin:0 auto 10px;
+  filter:drop-shadow(0 6px 14px rgba(0,0,0,.28));
 }
 .head h1{font-size:clamp(30px,8.6vw,44px);font-weight:800;letter-spacing:-.5px;text-shadow:0 3px 0 rgba(0,0,0,.16);}
 .head .zh{font-family:"Baloo 2",sans-serif;font-size:17px;font-weight:700;color:var(--yellow);margin:2px 0 10px;}
@@ -321,7 +331,7 @@ footer a{color:var(--yellow);font-weight:700;}
 
 <header class="head">
   <div class="wrap">
-    <span class="kf" id="h-kf"></span>
+    <img class="kf-logo" id="h-logo" src="images/logo.png" alt="" width="120" height="154">
     <h1 id="h-nom"></h1>
     <p class="zh" id="h-zh"></p>
     <p class="sub" id="h-sub"></p>
@@ -554,7 +564,6 @@ const CARTE = [
 
   /* ---------- En-tête ---------- */
   document.title = "Menu — " + CONFIG.nom;
-  $("h-kf").textContent  = CONFIG.kicker;
   $("h-nom").textContent = CONFIG.nom;
   $("h-zh").textContent  = CONFIG.zh;
   $("h-sub").textContent = CONFIG.sousTitre;
