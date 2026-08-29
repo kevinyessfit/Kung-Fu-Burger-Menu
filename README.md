@@ -1,8 +1,11 @@
-# Menu en ligne KUNG FU BURGER + commande + QR code
+# KUNG FU BURGER — menu en ligne
+
+La carte du restaurant sur téléphone, avec prise de commande WhatsApp,
+accessible par QR code.
 
 | Fichier | À quoi ça sert |
 |---|---|
-| `menu.html` | La carte que voit le client, avec panier et envoi de commande WhatsApp |
+| `index.html` | La carte que voit le client, avec panier et envoi de commande WhatsApp |
 | `qr.html` | L'affichette à imprimer (QR code + mode d'emploi) |
 | `menu-qr.svg` / `menu-qr.png` | Le QR code seul, pour l'impression et les réseaux |
 | `tools/make-qr.py` | Régénère le QR code si l'adresse du menu change |
@@ -17,8 +20,22 @@ Site statique : n'importe quel hébergement suffit. Avec **GitHub Pages** :
 3. Enregistrer, patienter une minute
 
 Adresse du menu :
-`https://kevinyessfit.github.io/Business-Cookie/menu.html`
-C'est exactement l'adresse encodée dans le QR code livré ici.
+`https://kevinyessfit.github.io/Business-Cookie/`
+
+Le menu est la page d'accueil du site : rien à taper après le nom, et
+l'adresse tient en une ligne. C'est exactement l'adresse encodée dans le
+QR code livré ici.
+
+### Renommer le dépôt (facultatif)
+
+L'adresse contient le nom du dépôt, encore `Business-Cookie`. Pour qu'elle
+dise `kung-fu-burger`, renomme le dépôt sur GitHub :
+**Settings → Repository name → Rename**. L'adresse devient alors
+`https://kevinyessfit.github.io/kung-fu-burger/`.
+
+Dans ce cas il faut **régénérer le QR code** (voir plus bas) et mettre à
+jour l'adresse affichée en bas de l'affichette, dans `qr.html`. À faire
+avant d'imprimer les affichettes, pas après.
 
 ## 2. Comment le client commande
 
@@ -57,7 +74,7 @@ aucune commission à payer.
 
 ## 3. Modifier la carte
 
-Tout se passe **dans `menu.html`, dans le bloc `<script>` en bas du
+Tout se passe **dans `index.html`, dans le bloc `<script>` en bas du
 fichier**. Rien d'autre n'est à toucher.
 
 ### Le restaurant — `CONFIG`
@@ -118,14 +135,14 @@ quelle que soit la longueur des noms.
 ## 4. Le QR code
 
 **Le QR code ne change jamais quand tu modifies la carte.** Il pointe vers
-l'adresse de la page, pas vers son contenu : change tes prix autant que tu
+l'adresse du site, pas vers son contenu : change tes prix autant que tu
 veux, les affichettes déjà imprimées restent valables.
 
 Il n'y a besoin de le régénérer que si l'**adresse** du menu change :
 
 ```bash
 pip install segno
-python3 tools/make-qr.py https://ton-domaine.com/menu.html
+python3 tools/make-qr.py https://ton-domaine.com/
 ```
 
 Mets alors à jour l'adresse écrite en bas de l'affichette, dans `qr.html`

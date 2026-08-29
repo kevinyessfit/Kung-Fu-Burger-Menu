@@ -122,13 +122,13 @@ h1,h2{font-family:"Baloo 2",sans-serif;color:var(--choco);margin:0 0 12px;line-h
       <li>Touche le lien : la carte s'ouvre, tu commandes.</li>
     </ol>
 
-    <p class="url" id="url">kevinyessfit.github.io/Business-Cookie/menu.html</p>
+    <p class="url" id="url">kevinyessfit.github.io/Business-Cookie</p>
   </div>
 
   <!-- ============ NOTICE (écran seulement) ============ -->
   <div class="btns">
     <button class="btn" type="button" onclick="window.print()">Imprimer l'affichette</button>
-    <a class="btn ghost" href="menu.html">Voir le menu</a>
+    <a class="btn ghost" href="./">Voir le menu</a>
   </div>
 
   <div class="notice">
@@ -142,11 +142,12 @@ h1,h2{font-family:"Baloo 2",sans-serif;color:var(--choco);margin:0 0 12px;line-h
       <li>Le QR code existe aussi en fichiers séparés : <code>menu-qr.svg</code>
         (impression grand format, sans perte de qualité) et
         <code>menu-qr.png</code> (réseaux sociaux, WhatsApp).</li>
-      <li>Le code renvoie vers <code>menu.html</code>. Tu peux changer le menu
-        autant que tu veux : <strong>le QR code, lui, ne change jamais</strong>.
-        Les affichettes déjà imprimées restent valables.</li>
+      <li>Le code renvoie vers l'adresse du site, pas vers son contenu. Tu peux
+        changer le menu autant que tu veux :
+        <strong>le QR code, lui, ne change jamais</strong>. Les affichettes
+        déjà imprimées restent valables.</li>
       <li>Pour pointer vers une autre adresse (ton propre domaine par exemple) :
-        <code>python3 tools/make-qr.py https://ton-domaine.com/menu.html</code>,
+        <code>python3 tools/make-qr.py https://ton-domaine.com/</code>,
         puis mets à jour l'adresse affichée en bas de l'affichette.</li>
       <li>Imprime le QR à <strong>3 cm de côté minimum</strong> pour qu'il se
         scanne facilement, et garde la marge blanche autour.</li>

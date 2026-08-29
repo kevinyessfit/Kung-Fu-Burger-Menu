@@ -4,7 +4,7 @@
 Usage :
     pip install segno
     python3 tools/make-qr.py                      # utilise l'URL par defaut
-    python3 tools/make-qr.py https://mon-site.fr/menu.html
+    python3 tools/make-qr.py https://mon-site.fr/
 
 Produit a la racine du depot :
     menu-qr.svg  -> vectoriel, a utiliser pour l'impression (affiche, chevalet, flyer)
@@ -18,11 +18,11 @@ import segno
 
 # URL par defaut du menu (GitHub Pages de ce depot).
 # Change cette ligne si le menu est heberge sur ton propre domaine.
-URL_MENU = "https://kevinyessfit.github.io/Business-Cookie/menu.html"
+URL_MENU = "https://kevinyessfit.github.io/Business-Cookie/"
 
-# Couleurs de la marque (identiques a menu.html).
-CHOCO = "#3A2318"
-CREAM = "#FFFDF9"
+# Couleurs de la marque (identiques a index.html).
+CHOCO = "#2A1608"
+CREAM = "#FFFFFF"
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
 
