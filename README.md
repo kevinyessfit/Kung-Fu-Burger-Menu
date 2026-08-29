@@ -22,26 +22,27 @@ Site statique : n'importe quel hébergement suffit. Avec **GitHub Pages** :
 3. Enregistrer, patienter une minute
 
 Adresse du menu :
-`https://kevinyessfit.github.io/Business-Cookie/`
+`https://kevinyessfit.github.io/Kung-Fu-Burger-Menu/`
 
 Le menu est la page d'accueil du site : rien à taper après le nom, et
 l'adresse tient en une ligne. C'est exactement l'adresse encodée dans le
 QR code livré ici.
 
-### Renommer le dépôt (facultatif)
+### Si le dépôt est un jour renommé
 
-L'adresse contient le nom du dépôt, encore `Business-Cookie`. Pour qu'elle
-dise `kung-fu-burger`, renomme le dépôt sur GitHub :
-**Settings → Repository name → Rename**. L'adresse devient alors
-`https://kevinyessfit.github.io/kung-fu-burger/`.
-
-Dans ce cas, trois choses sont à reprendre — **avant d'imprimer les
+L'adresse du site contient le nom du dépôt. Le renommer change donc
+l'adresse, et trois choses sont à reprendre — **avant d'imprimer les
 affichettes, pas après** :
 
-1. **régénérer le QR code** (voir plus bas) ;
+1. **régénérer le QR code** : `python3 tools/make-qr.py` après avoir mis à
+   jour `URL_MENU` en haut du fichier ;
 2. l'adresse affichée en bas de l'affichette, dans `qr.html` ;
-3. les balises `og:url` et `og:image` en haut de `index.html`, qui doivent
-   rester des adresses absolues pour que l'aperçu de partage fonctionne.
+3. les balises `og:url`, `og:image` et `twitter:image` en haut de
+   `index.html`, qui doivent rester des adresses absolues pour que
+   l'aperçu de partage fonctionne.
+
+Le dépôt doit aussi rester **public** : GitHub Pages ne publie pas les
+dépôts privés sur une offre gratuite.
 
 ## 2. Comment le client commande
 
