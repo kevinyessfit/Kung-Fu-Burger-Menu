@@ -6,6 +6,7 @@
 | `qr.html` | L'affichette à imprimer (QR code + mode d'emploi) |
 | `menu-qr.svg` / `menu-qr.png` | Le QR code seul, pour l'impression et les réseaux |
 | `tools/make-qr.py` | Régénère le QR code si l'adresse du menu change |
+| `images/` | Les 40 photos de plats, découpées dans la carte papier |
 
 ## 1. Mettre le menu en ligne
 
@@ -101,6 +102,10 @@ Une catégorie de boissons, avec deux formats :
   (`prix:[1000,1500]`), et le client voit un bouton par format.
 - `desc:"1 Burger & 1 Frites & 1 Soda"` ajoute une description (utilisée
   pour les Menus 1 à 8).
+- `img:"burger-bacon"` affiche la photo `images/burger-bacon.webp` à gauche
+  du nom. Sans `img`, la fiche reste alignée, seul le texte s'élargit.
+  Pour remplacer une photo : garde le même nom de fichier, mets ton image
+  carrée dans `images/`, et rien d'autre ne bouge.
 - `dispo:false` affiche l'article en « Épuisé aujourd'hui » et retire le
   bouton — pratique pour une rupture du jour, sans supprimer la ligne.
 - Ajouter une catégorie = ajouter un bloc `{ id, titre, items }`.
@@ -138,7 +143,24 @@ au papier, les boutons et les explications sont masqués automatiquement.
 `menu-qr.svg` est vectoriel : agrandissable à n'importe quelle taille
 (chevalet, kakémono, vitrine) sans perte de qualité.
 
-## 5. Points à vérifier par le restaurant
+## 5. Les photos
+
+Les 40 photos ont été découpées dans ta carte papier scannée, nettoyées
+(fond ramené au blanc) et enregistrées en WebP 240 × 240 — 223 Ko pour
+l'ensemble, pensé pour la data mobile.
+
+**12 articles n'ont pas de photo** : les 6 *Snacks* et les 6 *À ajouter*
+sont de simples listes de prix sur la carte papier, sans image à découper.
+Leurs fiches s'affichent sans vignette. Envoie-moi des photos et je les
+ajoute — ou dépose-les toi-même dans `images/` puis ajoute `img:"..."` sur
+l'article.
+
+Les vignettes viennent d'un scan : la définition reste correcte à la taille
+affichée, mais de vraies photos des plats seraient plus nettes. Certaines
+gardent la pastille de prix imprimée sur la carte ; les montants qu'elles
+portent sont ceux affichés par le menu.
+
+## 6. Points à vérifier par le restaurant
 
 Relevés en recopiant la carte papier :
 

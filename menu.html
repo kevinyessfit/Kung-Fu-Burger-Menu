@@ -120,13 +120,20 @@ button{font:inherit;cursor:pointer;}
 }
 @media (min-width:520px){ .grid{grid-template-columns:repeat(2,1fr);} }
 
+/* La fiche est une rangee : photo a gauche, nom + prix + bouton a droite.
+   Sans photo (Snacks, A ajouter) la colonne texte prend toute la largeur. */
 .dish{
-  display:flex;flex-direction:column;
+  display:flex;flex-direction:row;align-items:center;gap:12px;
   background:var(--paper);border:2px solid var(--line);
-  border-radius:var(--r-md);padding:13px 14px 12px;
+  border-radius:var(--r-md);padding:12px 13px;
   box-shadow:var(--shadow-sm);
 }
-.dish-body{flex:1 1 auto;}
+.thumb{
+  flex:0 0 auto;width:92px;height:92px;align-self:center;
+  object-fit:contain;object-position:center;
+}
+.dish-col{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;}
+.dish-body{flex:0 0 auto;}
 .dish h3{
   font-size:17.5px;font-weight:700;color:var(--ink);
   display:flex;align-items:baseline;justify-content:space-between;gap:10px;
@@ -137,10 +144,10 @@ button{font:inherit;cursor:pointer;}
   font-family:"Baloo 2",sans-serif;font-weight:800;font-size:17px;
   color:var(--red);white-space:nowrap;
 }
-.dish-actions{display:flex;gap:8px;margin-top:11px;flex-wrap:wrap;}
+.dish-actions{display:flex;gap:7px;margin-top:10px;flex-wrap:wrap;}
 
 .add{
-  flex:1 1 auto;min-width:0;
+  flex:1 1 120px;min-width:0;
   background:var(--orange);color:#FFF;border:none;
   border-radius:var(--r-sm);padding:10px 12px;
   font-family:"Baloo 2",sans-serif;font-weight:700;font-size:15px;
@@ -414,7 +421,8 @@ const CONFIG = {
    Catégorie : { id, titre, zh, note, tailles, items }
        tailles : facultatif. Si présent (ex. ["500 ML","700 ML"]), chaque
                  article de la catégorie doit avoir autant de prix.
-   Article   : { nom, zh, desc, prix, dispo }
+   Article   : { img, nom, zh, desc, prix, dispo }
+       img   : nom du fichier dans images/ sans l'extension .webp
        prix  : un nombre (2500) ou un tableau ([2000,3000]) si tailles
        dispo : false pour afficher l'article comme épuisé
    ===================================================================== */
@@ -423,30 +431,30 @@ const CARTE = [
     id:"burgers", titre:"Burgers", zh:"汉堡",
     note:"Servis avec salade et sauce maison.",
     items:[
-      { nom:"Burger Poulet épicé",      zh:"香辣鸡腿堡",   prix:2500 },
-      { nom:"Burger BBQ poulet",        zh:"奥尔良鸡腿堡", prix:2500 },
-      { nom:"Burger Bœuf",              zh:"香煎牛肉汉堡", prix:2000 },
-      { nom:"Burger Poisson",           zh:"鳕鱼堡",       prix:3000 },
-      { nom:"Burger Hawaii",            zh:"厚切菠萝牛肉堡", prix:3000 },
-      { nom:"Burger Crevette",          zh:"黄金虾滑汉堡", prix:3000 },
-      { nom:"Burger Poulet au fromage", zh:"芝士鸡肉汉堡", prix:3000 },
-      { nom:"Burger Bœuf au fromage",   zh:"芝士牛肉汉堡", prix:2500 },
-      { nom:"Burger Bacon",             zh:"芝士培根牛肉堡", prix:3500 },
-      { nom:"Burger King",              zh:"培根鸡腿肉霸堡", prix:3000 }
+      { img:"burger-poulet-epice", nom:"Burger Poulet épicé",      zh:"香辣鸡腿堡",   prix:2500 },
+      { img:"burger-bbq-poulet", nom:"Burger BBQ poulet",        zh:"奥尔良鸡腿堡", prix:2500 },
+      { img:"burger-boeuf", nom:"Burger Bœuf",              zh:"香煎牛肉汉堡", prix:2000 },
+      { img:"burger-poisson", nom:"Burger Poisson",           zh:"鳕鱼堡",       prix:3000 },
+      { img:"burger-hawaii", nom:"Burger Hawaii",            zh:"厚切菠萝牛肉堡", prix:3000 },
+      { img:"burger-crevette", nom:"Burger Crevette",          zh:"黄金虾滑汉堡", prix:3000 },
+      { img:"burger-poulet-fromage", nom:"Burger Poulet au fromage", zh:"芝士鸡肉汉堡", prix:3000 },
+      { img:"burger-boeuf-fromage", nom:"Burger Bœuf au fromage",   zh:"芝士牛肉汉堡", prix:2500 },
+      { img:"burger-bacon", nom:"Burger Bacon",             zh:"芝士培根牛肉堡", prix:3500 },
+      { img:"burger-king", nom:"Burger King",              zh:"培根鸡腿肉霸堡", prix:3000 }
     ]
   },
   {
     id:"menus", titre:"Menus", zh:"炸鸡套餐",
     note:"Le repas complet, boisson comprise.",
     items:[
-      { nom:"Menu 1", desc:"1 Frites & 1 Aile de poulet & 1 Petite cuisse",                              prix:2000 },
-      { nom:"Menu 2", desc:"1 Burger & 1 Frites & 1 Soda",                                               prix:3500 },
-      { nom:"Menu 3", desc:"1 Frites & 1 Aile & 1 Petite cuisse & 1 Grosse cuisse & 1 Soda",              prix:3500 },
-      { nom:"Menu 4", desc:"1 Spaghetti & 1 Frites & 1 Soda",                                            prix:3500 },
-      { nom:"Menu 5", desc:"1 Riz au poulet & 1 Frites & 1 Soda",                                        prix:4000 },
-      { nom:"Menu 6", desc:"1 Frites & 2 Ailes & 2 Petites cuisses & 1 Grosse cuisse & 1 Soda",           prix:4500 },
-      { nom:"Menu 7", desc:"2 Burgers & 2 Frites & 1 Aile & 1 Petite cuisse & 2 Sodas",                   prix:8000 },
-      { nom:"Menu 8", desc:"1 Frites & 2 Ailes & 2 Petites cuisses & 6 Grosses cuisses & 2 Pop-corn de poulet & 2 Sodas", prix:9500 }
+      { img:"menu-1", nom:"Menu 1", desc:"1 Frites & 1 Aile de poulet & 1 Petite cuisse",                              prix:2000 },
+      { img:"menu-2", nom:"Menu 2", desc:"1 Burger & 1 Frites & 1 Soda",                                               prix:3500 },
+      { img:"menu-3", nom:"Menu 3", desc:"1 Frites & 1 Aile & 1 Petite cuisse & 1 Grosse cuisse & 1 Soda",              prix:3500 },
+      { img:"menu-4", nom:"Menu 4", desc:"1 Spaghetti & 1 Frites & 1 Soda",                                            prix:3500 },
+      { img:"menu-5", nom:"Menu 5", desc:"1 Riz au poulet & 1 Frites & 1 Soda",                                        prix:4000 },
+      { img:"menu-6", nom:"Menu 6", desc:"1 Frites & 2 Ailes & 2 Petites cuisses & 1 Grosse cuisse & 1 Soda",           prix:4500 },
+      { img:"menu-7", nom:"Menu 7", desc:"2 Burgers & 2 Frites & 1 Aile & 1 Petite cuisse & 2 Sodas",                   prix:8000 },
+      { img:"menu-8", nom:"Menu 8", desc:"1 Frites & 2 Ailes & 2 Petites cuisses & 6 Grosses cuisses & 2 Pop-corn de poulet & 2 Sodas", prix:9500 }
     ]
   },
   {
@@ -478,46 +486,46 @@ const CARTE = [
     note:"Deux formats au choix.",
     tailles:["500 ML","700 ML"],
     items:[
-      { nom:"Mango pomelo sago", zh:"杨枝甘露",   prix:[2000,3000] },
-      { nom:"Roi d'avocat",      zh:"牛油果奶昔", prix:[2000,3000] },
-      { nom:"Thé Oreo",          zh:"奥利奥奶茶", prix:[2000,3000] },
-      { nom:"Roi de cacao",      zh:"可可奥利奥", prix:[2000,3000] },
-      { nom:"Thé aux perles",    zh:"珍珠奶茶",   prix:[1500,2000] },
-      { nom:"Thé au lait",       zh:"奶茶",       prix:[1000,1500] }
+      { img:"lait-mango-pomelo", nom:"Mango pomelo sago", zh:"杨枝甘露",   prix:[2000,3000] },
+      { img:"lait-avocat", nom:"Roi d'avocat",      zh:"牛油果奶昔", prix:[2000,3000] },
+      { img:"lait-oreo", nom:"Thé Oreo",          zh:"奥利奥奶茶", prix:[2000,3000] },
+      { img:"lait-cacao", nom:"Roi de cacao",      zh:"可可奥利奥", prix:[2000,3000] },
+      { img:"lait-perles", nom:"Thé aux perles",    zh:"珍珠奶茶",   prix:[1500,2000] },
+      { img:"lait-nature", nom:"Thé au lait",       zh:"奶茶",       prix:[1000,1500] }
     ]
   },
   {
     id:"milkshake", titre:"Milkshake", zh:"奶昔",
     tailles:["500 ML","700 ML"],
     items:[
-      { nom:"Frapuccino Matcha",   zh:"抹茶星冰乐", prix:[2000,3000] },
-      { nom:"Frapuccino chocolat", zh:"巧克力星冰乐", prix:[2000,3000] },
-      { nom:"Milkshake chocolat",  zh:"巧克力奶昔", prix:[1500,2500] },
-      { nom:"Milkshake fraise",    zh:"草莓奶昔",   prix:[1500,2500] },
-      { nom:"Smoothie Mangue-coco",zh:"芒芒生椰",   prix:[1500,2500] },
-      { nom:"Smoothie Raisin",     zh:"绵绵葡萄",   prix:[1500,2500] }
+      { img:"shake-matcha", nom:"Frapuccino Matcha",   zh:"抹茶星冰乐", prix:[2000,3000] },
+      { img:"shake-chocolat", nom:"Frapuccino chocolat", zh:"巧克力星冰乐", prix:[2000,3000] },
+      { img:"milkshake-chocolat", nom:"Milkshake chocolat",  zh:"巧克力奶昔", prix:[1500,2500] },
+      { img:"milkshake-fraise", nom:"Milkshake fraise",    zh:"草莓奶昔",   prix:[1500,2500] },
+      { img:"smoothie-mangue", nom:"Smoothie Mangue-coco",zh:"芒芒生椰",   prix:[1500,2500] },
+      { img:"smoothie-raisin", nom:"Smoothie Raisin",     zh:"绵绵葡萄",   prix:[1500,2500] }
     ]
   },
   {
     id:"jus", titre:"Jus", zh:"水果茶",
     tailles:["500 ML","700 ML"],
     items:[
-      { nom:"Orange frappé",       zh:"手打橙汁", prix:[1200,2000] },
-      { nom:"Jus de citron",       zh:"金桔柠檬", prix:[1000,1500] },
-      { nom:"Duo passion-ananas",  zh:"百香凤梨", prix:[1200,2000] },
-      { nom:"Jus de passion",      zh:"百香果汁", prix:[1000,1500] }
+      { img:"jus-orange", nom:"Orange frappé",       zh:"手打橙汁", prix:[1200,2000] },
+      { img:"jus-citron", nom:"Jus de citron",       zh:"金桔柠檬", prix:[1000,1500] },
+      { img:"jus-duo", nom:"Duo passion-ananas",  zh:"百香凤梨", prix:[1200,2000] },
+      { img:"jus-passion", nom:"Jus de passion",      zh:"百香果汁", prix:[1000,1500] }
     ]
   },
   {
     id:"cafe", titre:"Café", zh:"咖啡",
     tailles:["500 ML"],
     items:[
-      { nom:"Espresso",       zh:"意式浓缩", prix:[1000] },
-      { nom:"Cappucino",      zh:"卡布奇诺", prix:[2000] },
-      { nom:"America orange", zh:"橙C美式",  prix:[1500] },
-      { nom:"Latte Coco",     zh:"生椰拿铁", prix:[2000] },
-      { nom:"Mocha",          zh:"摩卡",     prix:[2000] },
-      { nom:"Latte caramel",  zh:"焦糖拿铁", prix:[2000] }
+      { img:"cafe-espresso", nom:"Espresso",       zh:"意式浓缩", prix:[1000] },
+      { img:"cafe-cappucino", nom:"Cappucino",      zh:"卡布奇诺", prix:[2000] },
+      { img:"cafe-america", nom:"America orange", zh:"橙C美式",  prix:[1500] },
+      { img:"cafe-latte-coco", nom:"Latte Coco",     zh:"生椰拿铁", prix:[2000] },
+      { img:"cafe-mocha", nom:"Mocha",          zh:"摩卡",     prix:[2000] },
+      { img:"cafe-caramel", nom:"Latte caramel",  zh:"焦糖拿铁", prix:[2000] }
     ]
   }
 ];
@@ -589,6 +597,20 @@ const CARTE = [
       const prixArr = Array.isArray(it.prix) ? it.prix : [it.prix];
 
       const card = el("article", "dish");
+
+      if (it.img){
+        const im = el("img", "thumb");
+        im.src = "images/" + it.img + ".webp";
+        im.alt = it.nom;
+        im.width = 86; im.height = 86;
+        im.loading = "lazy"; im.decoding = "async";
+        // si l'image manque, la fiche reste lisible sans trou
+        im.addEventListener("error", () => im.remove());
+        card.appendChild(im);
+      }
+
+      const col = el("div", "dish-col");
+
       const body = el("div", "dish-body");
 
       const h = el("h3");
@@ -598,7 +620,8 @@ const CARTE = [
       if (it.zh)   body.appendChild(el("p", "zh", it.zh));
       if (it.desc) body.appendChild(el("p", "desc", it.desc));
       if (!dispo)  body.appendChild(el("p", "desc", "Épuisé aujourd'hui"));
-      card.appendChild(body);
+      col.appendChild(body);
+      card.appendChild(col);
 
       if (dispo){
         const acts = el("div", "dish-actions");
@@ -632,7 +655,7 @@ const CARTE = [
           (boutons[cle] = boutons[cle] || []).push(b);
           acts.appendChild(b);
         });
-        card.appendChild(acts);
+        col.appendChild(acts);
       }
 
       grid.appendChild(card);
