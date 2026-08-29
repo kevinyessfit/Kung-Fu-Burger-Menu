@@ -95,13 +95,37 @@ h1,h2{font-family:"Baloo 2",sans-serif;color:var(--choco);margin:0 0 12px;line-h
 .btn.ghost{background:transparent;color:var(--choco);}
 .btn:focus-visible{outline:3px solid var(--honey);outline-offset:3px;}
 
+/* ---------- Planche de 6 cartons de table ---------- */
+.sheet{display:none;}
+.sheet-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:6mm;
+}
+.mini{
+  border:2px dashed #C74A0E;border-radius:10px;
+  padding:7mm 5mm;text-align:center;background:#FFF;
+  page-break-inside:avoid;break-inside:avoid;
+}
+.mini .m-kicker{
+  font-family:"Baloo 2",sans-serif;font-weight:800;font-size:9pt;
+  letter-spacing:1.4px;text-transform:uppercase;color:var(--caramel-dark);
+  margin:0 0 2mm;
+}
+.mini h2{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:15pt;margin:0 0 1mm;}
+.mini p{font-size:9.5pt;color:var(--choco-soft);margin:0 0 3mm;}
+.mini img{width:38mm;height:38mm;margin:0 auto 2mm;display:block;}
+.mini .m-url{font-family:"Baloo 2",sans-serif;font-weight:600;font-size:7.5pt;
+  color:var(--choco-soft);word-break:break-all;margin:0;}
+
 @media print{
-  @page{margin:14mm;}
+  @page{margin:12mm;}
   body{background:#FFF;}
   .wrap{padding:0;max-width:none;}
   .card{border-radius:0;box-shadow:none;border-width:3px;page-break-inside:avoid;}
   .qr{width:78mm;}
   .notice,.btns{display:none!important;}
+  /* en mode planche, la grande affichette laisse la place aux 6 cartons */
+  body.planche .card{display:none;}
+  body.planche .sheet{display:block;}
 }
 </style>
 </head>
@@ -126,9 +150,15 @@ h1,h2{font-family:"Baloo 2",sans-serif;color:var(--choco);margin:0 0 12px;line-h
     <p class="url" id="url">kevinyessfit.github.io/Kung-Fu-Burger-Menu</p>
   </div>
 
+  <!-- ============ PLANCHE DE 6 CARTONS (impression) ============ -->
+  <div class="sheet" id="sheet">
+    <div class="sheet-grid" id="sheet-grid"></div>
+  </div>
+
   <!-- ============ NOTICE (écran seulement) ============ -->
   <div class="btns">
-    <button class="btn" type="button" onclick="window.print()">Imprimer l'affichette</button>
+    <button class="btn" type="button" id="p-une">Imprimer 1 grande affichette</button>
+    <button class="btn" type="button" id="p-six">Imprimer 6 cartons de table</button>
     <a class="btn ghost" href="./">Voir le menu</a>
   </div>
 
@@ -150,11 +180,41 @@ h1,h2{font-family:"Baloo 2",sans-serif;color:var(--choco);margin:0 0 12px;line-h
       <li>Pour pointer vers une autre adresse (ton propre domaine par exemple) :
         <code>python3 tools/make-qr.py https://ton-domaine.com/</code>,
         puis mets à jour l'adresse affichée en bas de l'affichette.</li>
+      <li><strong>6 cartons de table</strong> : une planche de six petites
+        cartes identiques sur une seule feuille A4, à découper le long des
+        pointillés et à poser sur les tables.</li>
       <li>Imprime le QR à <strong>3 cm de côté minimum</strong> pour qu'il se
         scanne facilement, et garde la marge blanche autour.</li>
     </ul>
   </div>
 
 </div>
+
+<script>
+(function(){
+  var url = document.getElementById('url').textContent.trim();
+  var grid = document.getElementById('sheet-grid');
+  for (var i = 0; i < 6; i++){
+    var d = document.createElement('div');
+    d.className = 'mini';
+    d.innerHTML =
+      '<p class="m-kicker">Kung Fu Burger</p>' +
+      '<h2>Scanne &amp; commande</h2>' +
+      '<p>La carte sur ton téléphone.</p>' +
+      '<img src="menu-qr.svg" alt="QR code du menu">' +
+      '<p class="m-url">' + url + '</p>';
+    grid.appendChild(d);
+  }
+  function imprime(planche){
+    document.body.classList.toggle('planche', planche);
+    window.print();
+  }
+  document.getElementById('p-une').addEventListener('click', function(){ imprime(false); });
+  document.getElementById('p-six').addEventListener('click', function(){ imprime(true); });
+  window.addEventListener('afterprint', function(){
+    document.body.classList.remove('planche');
+  });
+})();
+</script>
 </body>
 </html>
