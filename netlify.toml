@@ -1,0 +1,28 @@
+# Configuration Netlify du menu KUNG FU BURGER.
+#
+# Netlify ne publie que le dossier _site, construit ci-dessous : le README,
+# les outils de generation du QR et l'historique git restent hors ligne.
+
+[build]
+  publish = "_site"
+  command = "mkdir -p _site && cp index.html qr.html favicon.png og-image.jpg menu-qr.svg menu-qr.png _site/ && cp -r images _site/images"
+
+# Les pages doivent toujours etre revalidees : un prix modifie doit etre
+# visible tout de suite, pas au bout d'une journee.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Les photos changent rarement : un jour de cache, assez pour soulager la
+# data mobile sans figer une photo remplacee.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
