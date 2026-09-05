@@ -22,7 +22,7 @@ Site statique : n'importe quel hébergement suffit. Avec **GitHub Pages** :
 3. Enregistrer, patienter une minute
 
 Adresse du menu :
-`https://kevinyessfit.github.io/Kung-Fu-Burger-Menu/`
+`https://kung-fu-burger-menu.netlify.app/`
 
 Le menu est la page d'accueil du site : rien à taper après le nom, et
 l'adresse tient en une ligne. C'est exactement l'adresse encodée dans le
