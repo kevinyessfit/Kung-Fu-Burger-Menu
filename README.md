@@ -15,40 +15,44 @@ accessible par QR code.
 
 ## 1. Ou le menu est heberge
 
-Le menu est publie a **deux adresses**, qui servent le meme contenu :
+Le menu est publie sur **Netlify**, a l'adresse :
+`https://kungfuburger.org/`
 
-- `https://kevinyessfit.github.io/Kung-Fu-Burger-Menu/` (GitHub Pages)
-- `https://kung-fu-burger-menu.netlify.app/` (Netlify)
+C'est cette adresse qui est encodee dans le QR code. Le menu est la page
+d'accueil du site : rien a taper apres le nom.
 
-**C'est l'adresse GitHub Pages qui est encodee dans le QR code**, le
-domaine `netlify.app` etant coupe par certains reseaux mobiles au Benin
-(connexion fermee des l'ouverture, erreur ERR_CONNECTION_CLOSED). Les deux
-publications tournent en parallele en attendant un nom de domaine propre,
-qui reglera la question definitivement.
+Le nom de domaine propre n'est pas cosmetique. Les adresses gratuites
+precedentes (`kung-fu-burger-menu.netlify.app` puis
+`kevinyessfit.github.io`) etaient toutes deux coupees par le reseau
+mobile, connexion fermee des l'ouverture (ERR_CONNECTION_CLOSED), alors
+que le web fonctionnait par ailleurs : ces sous-domaines d'hebergement
+gratuit figurent sur des listes de filtrage anti-hameconnage.
 
-C'est exactement l'adresse encodee dans le QR code livre ici. Le menu est
-la page d'accueil du site : rien a taper apres le nom.
-
-**Chaque push sur `main` republie les deux sites automatiquement**, en une
-minute environ : `netlify.toml` pour Netlify, `.github/workflows/pages.yml`
-pour GitHub Pages. Il n'y a rien a regler a la main.
+**Chaque push sur `main` republie le site automatiquement**, en une minute
+environ. `netlify.toml` decrit la construction ; il n'y a rien a regler a
+la main.
 
 Le site n'appelle aucun serveur exterieur : polices, images et logo sont
-servis par le site lui-meme. C'est volontaire, certains reseaux mobiles
-bloquant les domaines tiers, ce qui laissait la page blanche en donnees
-mobiles.
+servis par le site lui-meme, pour ne dependre d'aucun domaine tiers
+susceptible d'etre filtre.
 
 ### Si l'adresse change un jour
 
-Par exemple en attachant un nom de domaine. Trois choses sont a reprendre
-— **avant d'imprimer les affichettes, pas apres** :
+Trois choses sont a reprendre — **avant d'imprimer les affichettes, pas
+apres** :
 
 1. **regenerer le QR code** : mettre a jour `URL_MENU` en haut de
    `tools/make-qr.py`, puis `python3 tools/make-qr.py` ;
 2. l'adresse affichee en bas de l'affichette, dans `qr.html` ;
 3. les balises `og:url`, `og:image` et `twitter:image` en haut de
-   `index.html`, qui doivent rester des adresses absolues pour que
-   l'apercu de partage fonctionne.
+   `index.html`, qui doivent rester des adresses absolues.
+
+### Renouvellement du domaine
+
+`kungfuburger.org` est a renouveler chaque annee. **S'il expire, le QR
+code cesse de fonctionner et toutes les affichettes posees sur les tables
+deviennent inutiles.** Verifier que le renouvellement automatique est
+actif et que la carte bancaire enregistree reste valide.
 
 ## 2. Comment le client commande
 

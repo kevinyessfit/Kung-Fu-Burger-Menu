@@ -18,7 +18,7 @@ import segno
 
 # URL par defaut du menu (GitHub Pages de ce depot).
 # Change cette ligne si le menu est heberge sur ton propre domaine.
-URL_MENU = "https://kevinyessfit.github.io/Kung-Fu-Burger-Menu/"
+URL_MENU = "https://kungfuburger.org/"
 
 # Couleurs de la marque (identiques a index.html).
 CHOCO = "#2A1608"
