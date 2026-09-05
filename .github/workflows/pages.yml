@@ -1,0 +1,50 @@
+# Publie le menu sur GitHub Pages a chaque push sur main.
+#
+# Remis en service pendant que le reseau mobile bloque netlify.app.
+# Netlify continue de publier en parallele : les deux adresses servent le
+# meme contenu, c'est voulu le temps de trancher.
+name: Publier le menu
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploiement.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Activer et configurer Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Preparer le site
+        run: |
+          mkdir -p _site
+          cp index.html qr.html favicon.png og-image.jpg menu-qr.svg menu-qr.png _site/
+          cp -r images _site/images
+          cp -r fonts _site/fonts
+          ls _site
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deployer
+        id: deploiement
+        uses: actions/deploy-pages@v4

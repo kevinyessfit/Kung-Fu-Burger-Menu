@@ -15,15 +15,23 @@ accessible par QR code.
 
 ## 1. Ou le menu est heberge
 
-Le menu est publie sur **Netlify**, a l'adresse :
-`https://kung-fu-burger-menu.netlify.app/`
+Le menu est publie a **deux adresses**, qui servent le meme contenu :
+
+- `https://kevinyessfit.github.io/Kung-Fu-Burger-Menu/` (GitHub Pages)
+- `https://kung-fu-burger-menu.netlify.app/` (Netlify)
+
+**C'est l'adresse GitHub Pages qui est encodee dans le QR code**, le
+domaine `netlify.app` etant coupe par certains reseaux mobiles au Benin
+(connexion fermee des l'ouverture, erreur ERR_CONNECTION_CLOSED). Les deux
+publications tournent en parallele en attendant un nom de domaine propre,
+qui reglera la question definitivement.
 
 C'est exactement l'adresse encodee dans le QR code livre ici. Le menu est
 la page d'accueil du site : rien a taper apres le nom.
 
-Le depot est connecte a Netlify : **chaque push sur `main` republie le
-site automatiquement**, en une minute environ. `netlify.toml` decrit la
-construction ; il n'y a rien a regler dans l'interface de Netlify.
+**Chaque push sur `main` republie les deux sites automatiquement**, en une
+minute environ : `netlify.toml` pour Netlify, `.github/workflows/pages.yml`
+pour GitHub Pages. Il n'y a rien a regler a la main.
 
 Le site n'appelle aucun serveur exterieur : polices, images et logo sont
 servis par le site lui-meme. C'est volontaire, certains reseaux mobiles
