@@ -40,6 +40,7 @@ jobs:
           mkdir -p _site
           cp index.html qr.html favicon.png og-image.jpg menu-qr.svg menu-qr.png _site/
           cp -r images _site/images
+          cp -r fonts _site/fonts
           ls -R _site | head -20
 
       - uses: actions/upload-pages-artifact@v3

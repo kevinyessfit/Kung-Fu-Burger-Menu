@@ -5,7 +5,7 @@
 
 [build]
   publish = "_site"
-  command = "mkdir -p _site && cp index.html qr.html favicon.png og-image.jpg menu-qr.svg menu-qr.png _site/ && cp -r images _site/images"
+  command = "mkdir -p _site && cp index.html qr.html favicon.png og-image.jpg menu-qr.svg menu-qr.png _site/ && cp -r images _site/images && cp -r fonts _site/fonts"
 
 # Les pages doivent toujours etre revalidees : un prix modifie doit etre
 # visible tout de suite, pas au bout d'une journee.
@@ -20,6 +20,13 @@
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+# Les polices ne changent jamais : cache long, elles ne seront telechargees
+# qu'une seule fois par client.
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
   for = "/*"
