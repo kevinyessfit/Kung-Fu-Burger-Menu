@@ -13,36 +13,34 @@ accessible par QR code.
 | `og-image.jpg` | L'aperçu affiché quand le lien est partagé (WhatsApp, TikTok) |
 | `favicon.png` | L'icône de l'onglet et du raccourci sur l'écran d'accueil |
 
-## 1. Mettre le menu en ligne
+## 1. Ou le menu est heberge
 
-Site statique : n'importe quel hébergement suffit. Avec **GitHub Pages** :
-
-1. GitHub → **Settings** → **Pages**
-2. *Source* : **Deploy from a branch**, branche `main`, dossier `/ (root)`
-3. Enregistrer, patienter une minute
-
-Adresse du menu :
+Le menu est publie sur **Netlify**, a l'adresse :
 `https://kung-fu-burger-menu.netlify.app/`
 
-Le menu est la page d'accueil du site : rien à taper après le nom, et
-l'adresse tient en une ligne. C'est exactement l'adresse encodée dans le
-QR code livré ici.
+C'est exactement l'adresse encodee dans le QR code livre ici. Le menu est
+la page d'accueil du site : rien a taper apres le nom.
 
-### Si le dépôt est un jour renommé
+Le depot est connecte a Netlify : **chaque push sur `main` republie le
+site automatiquement**, en une minute environ. `netlify.toml` decrit la
+construction ; il n'y a rien a regler dans l'interface de Netlify.
 
-L'adresse du site contient le nom du dépôt. Le renommer change donc
-l'adresse, et trois choses sont à reprendre — **avant d'imprimer les
-affichettes, pas après** :
+Le site n'appelle aucun serveur exterieur : polices, images et logo sont
+servis par le site lui-meme. C'est volontaire, certains reseaux mobiles
+bloquant les domaines tiers, ce qui laissait la page blanche en donnees
+mobiles.
 
-1. **régénérer le QR code** : `python3 tools/make-qr.py` après avoir mis à
-   jour `URL_MENU` en haut du fichier ;
-2. l'adresse affichée en bas de l'affichette, dans `qr.html` ;
+### Si l'adresse change un jour
+
+Par exemple en attachant un nom de domaine. Trois choses sont a reprendre
+— **avant d'imprimer les affichettes, pas apres** :
+
+1. **regenerer le QR code** : mettre a jour `URL_MENU` en haut de
+   `tools/make-qr.py`, puis `python3 tools/make-qr.py` ;
+2. l'adresse affichee en bas de l'affichette, dans `qr.html` ;
 3. les balises `og:url`, `og:image` et `twitter:image` en haut de
    `index.html`, qui doivent rester des adresses absolues pour que
-   l'aperçu de partage fonctionne.
-
-Le dépôt doit aussi rester **public** : GitHub Pages ne publie pas les
-dépôts privés sur une offre gratuite.
+   l'apercu de partage fonctionne.
 
 ## 2. Comment le client commande
 
